@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Programs - Inclusive Rehabilitation & Reintegration Initiative</title>
+  <meta name="description" content="Explore IRRI's five program areas: medical rehabilitation, economic empowerment, legal aid, peacebuilding, and humanitarian response for conflict-affected persons with disabilities in Nigeria.">
+  <meta name="keywords" content="IRRI, programs, rehabilitation, vocational training, legal aid, peacebuilding, humanitarian, disability, Nigeria">
+  <meta name="author" content="IRRI - Inclusive Rehabilitation & Reintegration Initiative">
+  <link rel="canonical" href="https://irriinitiative.org/programs.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Our Programs - Inclusive Rehabilitation & Reintegration Initiative">
+  <meta property="og:description" content="Explore IRRI's five program areas supporting conflict-affected persons with disabilities in Nigeria.">
+  <meta property="og:image" content="https://irriinitiative.org/prog-rehab.jpg">
+  <meta property="og:url" content="https://irriinitiative.org/programs.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="IRRI">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Our Programs - Inclusive Rehabilitation & Reintegration Initiative">
+  <meta name="twitter:description" content="Explore IRRI's five program areas supporting conflict-affected persons with disabilities in Nigeria.">
+  <meta name="twitter:image" content="https://irriinitiative.org/prog-rehab.jpg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --navy: #0A1628;
+      --navy-mid: #0F2341;
+      --teal: #0E7C7B;
+      --teal-light: #17A8A6;
+      --teal-pale: #E0F5F5;
+      --gold: #C8A84E;
+      --gold-light: #E8D48B;
+      --cream: #FAF8F2;
+      --warm-white: #FDFCF9;
+      --text-dark: #1A1A2E;
+      --text-mid: #4A4A5A;
+      --text-light: #7A7A8A;
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Outfit', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--warm-white);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
+      will-change: background, padding;
+    }
+
+    .nav.scrolled {
+      background: rgba(10, 22, 40, 0.97);
+      padding: 0.6rem 2rem;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+    }
+
+    .nav-logo img {
+      height: 50px;
+      width: auto;
+      transition: height 0.4s;
+    }
+
+    .nav.scrolled .nav-logo img { height: 40px; }
+
+    .nav-logo-text {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: white;
+      letter-spacing: 0.02em;
+      line-height: 1.2;
+    }
+
+    .nav-logo-text span {
+      display: block;
+      font-size: 0.55rem;
+      font-family: var(--font-body);
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 1.5px;
+      background: var(--gold);
+      transition: width 0.3s;
+    }
+
+    .nav-links a:hover { color: white; }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-links a.active { color: white; }
+    .nav-links a.active::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--gold) !important;
+      color: var(--navy) !important;
+      padding: 0.55rem 1.4rem;
+      border-radius: 4px;
+      font-weight: 600 !important;
+      font-size: 0.8rem !important;
+      letter-spacing: 0.05em !important;
+      text-transform: uppercase;
+      transition: all 0.3s !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold-light) !important;
+      transform: translateY(-1px);
+    }
+
+    .nav-cta::after { display: none !important; }
+
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 5px;
+    }
+
+    .mobile-toggle span {
+      width: 24px; height: 2px;
+      background: white;
+      transition: all 0.3s;
+      border-radius: 2px;
+    }
+
+    /* ===== PAGE HERO ===== */
+    .page-hero {
+      position: relative;
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background:
+        linear-gradient(135deg, rgba(10,22,40,0.88) 0%, rgba(15,35,65,0.82) 40%, rgba(12,53,71,0.78) 70%, rgba(14,124,123,0.72) 100%),
+        url('prog-rehab.jpg') center/cover no-repeat;
+      overflow: hidden;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 120px;
+      background: linear-gradient(to top, var(--warm-white), transparent);
+      z-index: 2;
+    }
+
+    .page-hero-content {
+      position: relative;
+      z-index: 3;
+      padding: 8rem 2rem 4rem;
+      max-width: 800px;
+    }
+
+    .page-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(200, 168, 78, 0.12);
+      border: 1px solid rgba(200, 168, 78, 0.25);
+      color: var(--gold-light);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0.5rem 1.2rem;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .page-hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+    }
+
+    .page-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      font-weight: 600;
+      color: white;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .page-hero p {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.7;
+      font-weight: 300;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* ===== SECTION SHARED ===== */
+    .section {
+      padding: 7rem 2rem;
+    }
+
+    .section-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+
+    .section-label::before {
+      content: '';
+      width: 30px;
+      height: 1.5px;
+      background: var(--gold);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 600;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      max-width: 600px;
+      font-weight: 300;
+    }
+
+    /* ===== PROGRAMS OVERVIEW ===== */
+    .overview {
+      background: var(--warm-white);
+    }
+
+    .overview-text {
+      max-width: 800px;
+      color: var(--text-mid);
+      line-height: 1.8;
+      font-weight: 300;
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+    }
+
+    /* ===== PROGRAM CARDS ===== */
+    .programs {
+      background: var(--cream);
+    }
+
+    .programs-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .programs-header .section-label { justify-content: center; }
+    .programs-header .section-subtitle { margin: 0 auto; }
+
+    .program-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 5rem;
+    }
+
+    .program-card:last-child {
+      margin-bottom: 0;
+    }
+
+    .program-card:nth-child(even) {
+      direction: rtl;
+    }
+
+    .program-card:nth-child(even) > * {
+      direction: ltr;
+    }
+
+    .program-card-image {
+      border-radius: 12px;
+      overflow: hidden;
+      height: 320px;
+    }
+
+    .program-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s;
+    }
+
+    .program-card-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .program-card-content h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .program-card-content p {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    .program-card-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 0.8rem;
+    }
+
+    .program-card-tag::before {
+      content: '';
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
+    /* ===== PILOT PROJECT ===== */
+    .pilot {
+      background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pilot::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      border: 1px solid rgba(200,168,78,0.06);
+      border-radius: 50%;
+    }
+
+    .pilot .section-label { color: var(--gold-light); }
+    .pilot .section-title { color: white; }
+    .pilot .section-subtitle { color: rgba(255,255,255,0.6); }
+
+    .pilot-timeline {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 3rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .pilot-phase {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: all 0.4s;
+      position: relative;
+    }
+
+    .pilot-phase:hover {
+      background: rgba(255,255,255,0.07);
+      border-color: rgba(255,255,255,0.15);
+      transform: translateY(-3px);
+    }
+
+    .pilot-phase-number {
+      font-family: var(--font-display);
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(200,168,78,0.15);
+      line-height: 1;
+      margin-bottom: 0.8rem;
+    }
+
+    .pilot-phase h4 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: white;
+      margin-bottom: 0.6rem;
+    }
+
+    .pilot-phase p {
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .pilot-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+      z-index: 1;
+    }
+
+    .pilot-stat {
+      text-align: center;
+    }
+
+    .pilot-stat-number {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .pilot-stat-label {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.5);
+      font-weight: 300;
+      letter-spacing: 0.04em;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: var(--cream);
+      text-align: center;
+    }
+
+    .cta-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .cta-inner .section-label { justify-content: center; }
+    .cta-inner .section-title { margin-bottom: 1rem; }
+    .cta-inner .section-subtitle { margin: 0 auto 2.5rem; max-width: 550px; }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--navy);
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: all 0.3s;
+    }
+
+    .btn-primary-dark:hover {
+      background: var(--navy-mid);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(10,22,40,0.2);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: transparent;
+      color: var(--navy);
+      padding: 0.9rem 2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.04em;
+      border: 1.5px solid var(--navy);
+      transition: all 0.3s;
+    }
+
+    .btn-outline:hover {
+      background: var(--navy);
+      color: white;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      padding: 4rem 2rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin-top: 1rem;
+      max-width: 300px;
+    }
+
+    .footer-brand .nav-logo-text { font-size: 1.4rem; }
+
+    .footer h5 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      margin-bottom: 1.2rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-links a {
+      color: rgba(255,255,255,0.45);
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: color 0.3s;
+    }
+
+    .footer-links a:hover { color: var(--gold-light); }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 3rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-bottom-links a {
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-60px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(60px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-left.visible, .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 968px) {
+      .program-card { grid-template-columns: 1fr; gap: 2rem; }
+      .program-card:nth-child(even) { direction: ltr; }
+      .pilot-timeline { grid-template-columns: 1fr; }
+      .pilot-stats { grid-template-columns: 1fr; gap: 1.5rem; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-links { display: none; }
+      .mobile-toggle { display: flex; }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: rgba(10,22,40,0.98);
+        padding: 2rem;
+        gap: 1.2rem;
+      }
+
+      .footer-inner { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+
+      .section { padding: 4rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.svg" alt="IRRI Logo">
+      <div class="nav-logo-text">
+        IRRI
+        <span>Inclusive Rehabilitation & Reintegration</span>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html" class="active">Programs</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Involved</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-content">
+      <div class="page-hero-badge">What We Do</div>
+      <h1>Our Programs</h1>
+      <p>IRRI works across five interconnected program areas to deliver holistic rehabilitation, protection, and reintegration for conflict-affected persons with disabilities.</p>
+    </div>
+  </section>
+
+  <!-- PROGRAMS OVERVIEW -->
+  <section class="section overview">
+    <div class="section-container">
+      <div class="section-label reveal-left">Program Areas</div>
+      <div class="section-title reveal-left">Five Pillars of Inclusive Recovery</div>
+      <p class="overview-text reveal">IRRI's work is organized around five integrated program areas, each addressing a critical dimension of the rehabilitation and reintegration journey. From medical care and assistive devices to legal advocacy and economic empowerment, our programs are designed to work together, ensuring that beneficiaries receive comprehensive support that addresses the full spectrum of their needs. Every program is led by persons with disabilities and grounded in rights-based, evidence-driven, and community-centered approaches.</p>
+    </div>
+  </section>
+
+  <!-- PROGRAM CARDS -->
+  <section class="section programs">
+    <div class="section-container">
+      <div class="programs-header">
+        <div class="section-label reveal-scale">Our Work</div>
+        <div class="section-title reveal-scale">Integrated Program Areas</div>
+        <div class="section-subtitle reveal-scale">Each program area is designed to reinforce the others, creating a comprehensive pathway from crisis to sustainable recovery.</div>
+      </div>
+
+      <!-- Program 1: Medical Rehabilitation -->
+      <div class="program-card">
+        <div class="program-card-image reveal-left">
+          <img src="prog-rehab.jpg" alt="Medical rehabilitation and assistive devices program" loading="lazy">
+        </div>
+        <div class="program-card-content reveal-right">
+          <div class="program-card-tag">Program 1</div>
+          <h3>Medical Rehabilitation & Assistive Devices</h3>
+          <p>IRRI provides access to physical rehabilitation, prosthetics, orthotics, mobility aids, and mental health and psychosocial support (MHPSS) for conflict- and disaster-affected persons with disabilities. Working with local health facilities and rehabilitation centers, we ensure that beneficiaries receive timely, quality care tailored to their individual needs. Our approach integrates clinical rehabilitation with community-based support, enabling long-term recovery and independence.</p>
+        </div>
+      </div>
+
+      <!-- Program 2: Economic Empowerment -->
+      <div class="program-card">
+        <div class="program-card-image reveal-right">
+          <img src="prog-work.jpg" alt="Economic empowerment and vocational training program" loading="lazy">
+        </div>
+        <div class="program-card-content reveal-left">
+          <div class="program-card-tag">Program 2</div>
+          <h3>Economic Empowerment & Vocational Training</h3>
+          <p>Our Rehab-to-Work pipeline connects rehabilitation outcomes to sustainable livelihoods. Through market-aligned vocational training, digital skills development, apprenticeship placements, and micro-enterprise support, we equip persons with disabilities with the tools and confidence to earn a living and participate in their local economies. Programs are designed with accessibility at the core, ensuring that training environments, materials, and mentorship are fully inclusive.</p>
+        </div>
+      </div>
+
+      <!-- Program 3: Legal Aid -->
+      <div class="program-card">
+        <div class="program-card-image reveal-left">
+          <img src="prog-legal.jpg" alt="Legal aid and rights advocacy program" loading="lazy">
+        </div>
+        <div class="program-card-content reveal-right">
+          <div class="program-card-tag">Program 3</div>
+          <h3>Legal Aid & Rights Advocacy</h3>
+          <p>Many conflict-affected persons with disabilities face documentation gaps, loss of legal identity, barriers to accessing benefits, and exclusion from justice processes. IRRI provides legal navigation services, supports documentation recovery, advocates for policy reform, and works to ensure that disability rights are reflected in humanitarian and national legal frameworks. We partner with legal aid organizations and disability rights groups to amplify the voices of those most often unheard.</p>
+        </div>
+      </div>
+
+      <!-- Program 4: Peacebuilding -->
+      <div class="program-card">
+        <div class="program-card-image reveal-right">
+          <img src="prog-peace.jpg" alt="Peacebuilding and social cohesion program" loading="lazy">
+        </div>
+        <div class="program-card-content reveal-left">
+          <div class="program-card-tag">Program 4</div>
+          <h3>Peacebuilding & Social Cohesion</h3>
+          <p>Disability and conflict are deeply intertwined, yet persons with disabilities are routinely excluded from peace processes and community reconciliation. IRRI facilitates inclusive dialogue, supports community-based reconciliation initiatives, and trains local peacebuilders to integrate disability perspectives into their work. By centering lived experience in peacebuilding, we help communities build trust, reduce stigma, and create conditions for lasting stability.</p>
+        </div>
+      </div>
+
+      <!-- Program 5: Humanitarian Response -->
+      <div class="program-card">
+        <div class="program-card-image reveal-left">
+          <img src="prog-humanitarian.jpg" alt="Humanitarian response and emergency relief program" loading="lazy">
+        </div>
+        <div class="program-card-content reveal-right">
+          <div class="program-card-tag">Program 5</div>
+          <h3>Humanitarian Response & Emergency Relief</h3>
+          <p>In emergency settings, persons with disabilities are among the most vulnerable and the most likely to be left behind. IRRI works to mainstream disability inclusion across humanitarian response, from shelter and food distribution to health services and protection. We deploy rapid assessments, provide emergency assistive devices, and train humanitarian actors on inclusive practices, ensuring that no one is overlooked when disaster strikes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILOT PROJECT -->
+  <section class="section pilot" id="pilot">
+    <div class="section-container">
+      <div class="section-label reveal-left">Pilot Project</div>
+      <div class="section-title reveal-left" style="color: white;">3-Month Proof of Concept</div>
+      <div class="section-subtitle reveal-left">Our structured pilot project demonstrates the impact of integrated programming across three carefully sequenced phases.</div>
+
+      <div class="pilot-timeline">
+        <div class="pilot-phase reveal reveal-delay-1">
+          <div class="pilot-phase-number">01</div>
+          <h4>Assessment & Enrollment</h4>
+          <p>Community outreach, disability screening, needs assessment, and enrollment of beneficiaries across pilot sites. This phase establishes baseline data, maps existing services, and builds the referral pathways that underpin the entire pilot.</p>
+        </div>
+        <div class="pilot-phase reveal reveal-delay-2">
+          <div class="pilot-phase-number">02</div>
+          <h4>Rehabilitation & Skills Training</h4>
+          <p>Delivery of rehabilitation services, assistive devices, psychosocial support, and market-aligned vocational training. Beneficiaries receive individualized plans combining clinical care with practical skills development and peer mentorship.</p>
+        </div>
+        <div class="pilot-phase reveal reveal-delay-3">
+          <div class="pilot-phase-number">03</div>
+          <h4>Reintegration & Follow-up</h4>
+          <p>Community reintegration support, livelihood placement, legal documentation assistance, and structured follow-up monitoring. Outcomes are tracked and lessons are documented to inform program scaling and policy recommendations.</p>
+        </div>
+      </div>
+
+      <div class="pilot-stats">
+        <div class="pilot-stat reveal reveal-delay-1">
+          <div class="pilot-stat-number">300</div>
+          <div class="pilot-stat-label">Beneficiaries</div>
+        </div>
+        <div class="pilot-stat reveal reveal-delay-2">
+          <div class="pilot-stat-number">200</div>
+          <div class="pilot-stat-label">Skills Trained</div>
+        </div>
+        <div class="pilot-stat reveal reveal-delay-3">
+          <div class="pilot-stat-number">40</div>
+          <div class="pilot-stat-label">Pilot Sites</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <div class="section-container">
+      <div class="cta-inner reveal-scale">
+        <div class="section-label">Support Our Work</div>
+        <div class="section-title">Want to Support Our Programs?</div>
+        <div class="section-subtitle">Your partnership helps deliver rehabilitation, skills, and rights to those most often left behind in recovery and reconstruction.</div>
+        <div class="cta-buttons">
+          <a href="contact.html" class="btn-primary-dark">Get In Touch</a>
+          <a href="contact.html" class="btn-outline">Partner With Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo-text">
+          IRRI
+          <span>Inclusive Rehabilitation & Reintegration Initiative</span>
+        </div>
+        <p>Reclaiming Dignity. Rebuilding Futures Through Inclusive Reintegration.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Nigeria &bull; Aligned with UN CRPD</p>
+      </div>
+      <div>
+        <h5>Programs</h5>
+        <ul class="footer-links">
+          <li><a href="programs.html">Rehabilitation & MHPSS</a></li>
+          <li><a href="programs.html">Rehab-to-Work</a></li>
+          <li><a href="programs.html">Legal Navigation</a></li>
+          <li><a href="programs.html">Peacebuilding</a></li>
+          <li><a href="programs.html">Humanitarian Inclusion</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>About</h5>
+        <ul class="footer-links">
+          <li><a href="about.html">Our Mission</a></li>
+          <li><a href="about.html">Core Values</a></li>
+          <li><a href="programs.html#pilot">Pilot Project</a></li>
+          <li><a href="about.html">Partners</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Connect</h5>
+        <ul class="footer-links">
+          <li><a href="mailto:info@irriinitiative.org">Email Us</a></li>
+          <li><a href="contact.html">Get Involved</a></li>
+          <li><a href="contact.html">Donate</a></li>
+          <li><a href="blog.html">News & Updates</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 IRRI - Inclusive Rehabilitation & Reintegration Initiative. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll effect (throttled with rAF)
+    const nav = document.getElementById('nav');
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          nav.classList.toggle('scrolled', window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+
+    // Mobile menu toggle
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navLinks = document.getElementById('navLinks');
+    mobileToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Scroll reveal
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

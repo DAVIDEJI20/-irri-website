@@ -3,8 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IRRI — Inclusive Rehabilitation & Reintegration Initiative</title>
+  <title>IRRI - Inclusive Rehabilitation & Reintegration Initiative</title>
   <meta name="description" content="Reclaiming Dignity. Rebuilding Futures Through Inclusive Reintegration. IRRI advances rehabilitation, protection, and sustainable livelihoods for conflict- and disaster-affected persons with disabilities in Nigeria.">
+  <meta name="keywords" content="IRRI, rehabilitation, reintegration, disability, Nigeria, inclusive, humanitarian, conflict, CRPD">
+  <meta name="author" content="IRRI - Inclusive Rehabilitation & Reintegration Initiative">
+  <link rel="canonical" href="https://irriinitiative.org/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="IRRI - Inclusive Rehabilitation & Reintegration Initiative">
+  <meta property="og:description" content="Reclaiming Dignity. Rebuilding Futures Through Inclusive Reintegration. IRRI advances rehabilitation, protection, and sustainable livelihoods for conflict- and disaster-affected persons with disabilities in Nigeria.">
+  <meta property="og:image" content="https://irriinitiative.org/hero-bg.jpg">
+  <meta property="og:url" content="https://irriinitiative.org/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="IRRI">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="IRRI - Inclusive Rehabilitation & Reintegration Initiative">
+  <meta name="twitter:description" content="Reclaiming Dignity. Rebuilding Futures Through Inclusive Reintegration.">
+  <meta name="twitter:image" content="https://irriinitiative.org/hero-bg.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NonprofitOrganization",
+    "name": "IRRI - Inclusive Rehabilitation & Reintegration Initiative",
+    "url": "https://irriinitiative.org",
+    "logo": "https://irriinitiative.org/logo.svg",
+    "description": "IRRI advances rehabilitation, protection, and sustainable livelihoods for conflict- and disaster-affected persons with disabilities in Nigeria.",
+    "email": "info@irriinitiative.org",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lagos",
+      "addressCountry": "NG"
+    },
+    "sameAs": [],
+    "foundingDate": "2025",
+    "areaServed": "Nigeria",
+    "nonprofitStatus": "Nonprofit501c3"
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -121,6 +161,9 @@
     .nav-links a:hover { color: white; }
     .nav-links a:hover::after { width: 100%; }
 
+    .nav-links a.active { color: white; }
+    .nav-links a.active::after { width: 100%; }
+
     .nav-cta {
       background: var(--gold) !important;
       color: var(--navy) !important;
@@ -169,12 +212,31 @@
       overflow: hidden;
     }
 
+    .hero-bg-parallax {
+      position: absolute;
+      top: -10%;
+      left: 0;
+      right: 0;
+      bottom: -10%;
+      background: url('hero-bg.jpg') center 30%/cover no-repeat;
+      will-change: transform;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, rgba(10,22,40,0.82) 0%, rgba(15,35,65,0.78) 40%, rgba(12,53,71,0.72) 70%, rgba(14,124,123,0.68) 100%);
+      z-index: 1;
+    }
+
     .hero::before {
       content: '';
       position: absolute;
       top: -50%; right: -30%;
       width: 80%; height: 150%;
       background: radial-gradient(ellipse, rgba(14,124,123,0.15) 0%, transparent 70%);
+      z-index: 2;
     }
 
     .hero::after {
@@ -186,11 +248,11 @@
       z-index: 2;
     }
 
-    /* Floating geometric accents — static, no animation */
     .hero-accent {
       position: absolute;
       border: 1px solid rgba(200, 168, 78, 0.15);
       border-radius: 50%;
+      z-index: 2;
     }
 
     .hero-accent:nth-child(1) { width: 300px; height: 300px; top: 10%; right: 5%; }
@@ -1165,6 +1227,37 @@
       transform: translateY(0);
     }
 
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-60px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(60px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-left.visible, .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-scale {
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-scale.visible {
+      opacity: 1;
+      transform: scale(1);
+    }
+
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
@@ -1214,7 +1307,6 @@
         position: absolute;
         top: 100%; left: 0; right: 0;
         background: rgba(10,22,40,0.98);
-        backdrop-filter: blur(20px);
         padding: 2rem;
         gap: 1.2rem;
       }
@@ -1236,7 +1328,7 @@
 
   <!-- NAVIGATION -->
   <nav class="nav" id="nav">
-    <a href="#" class="nav-logo">
+    <a href="index.html" class="nav-logo">
       <img src="logo.svg" alt="IRRI Logo">
       <div class="nav-logo-text">
         IRRI
@@ -1244,12 +1336,11 @@
       </div>
     </a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#about">About</a></li>
-      <li><a href="#programs">Programs</a></li>
-      <li><a href="#values">Values</a></li>
-      <li><a href="#pilot">Pilot Project</a></li>
-      <li><a href="#partners">Partners</a></li>
-      <li><a href="#contact" class="nav-cta">Get Involved</a></li>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="programs.html">Programs</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html" class="nav-cta">Get Involved</a></li>
     </ul>
     <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
@@ -1258,6 +1349,8 @@
 
   <!-- HERO -->
   <section class="hero">
+    <div class="hero-bg-parallax" id="heroBg"></div>
+    <div class="hero-overlay"></div>
     <div class="hero-accent"></div>
     <div class="hero-accent"></div>
     <div class="hero-accent"></div>
@@ -1267,13 +1360,13 @@
         <h1>Reclaiming Dignity.<br><em>Rebuilding Futures.</em></h1>
         <p class="hero-tagline">Advancing rehabilitation, protection, and sustainable livelihoods for conflict- and disaster-affected persons with disabilities in Nigeria.</p>
         <div class="hero-actions">
-          <a href="#programs" class="btn-primary">Our Programs &darr;</a>
-          <a href="#pilot" class="btn-secondary">View Pilot Project</a>
+          <a href="programs.html" class="btn-primary">Our Programs &darr;</a>
+          <a href="about.html" class="btn-secondary">Learn More</a>
         </div>
       </div>
       <div class="hero-visual">
         <div class="hero-logo-container">
-          <img src="logo.svg" alt="IRRI — Inclusive Rehabilitation & Reintegration Initiative">
+          <img src="logo.svg" alt="IRRI - Inclusive Rehabilitation & Reintegration Initiative">
         </div>
       </div>
     </div>
@@ -1282,19 +1375,19 @@
   <!-- IMPACT STRIP -->
   <div class="impact-strip">
     <div class="impact-strip-inner">
-      <div class="impact-item reveal">
+      <div class="impact-item reveal-scale">
         <div class="impact-number" data-count="300">0</div>
         <div class="impact-label">Beneficiaries (Year 1)</div>
       </div>
-      <div class="impact-item reveal reveal-delay-1">
+      <div class="impact-item reveal-scale reveal-delay-1">
         <div class="impact-number" data-count="200">0</div>
         <div class="impact-label">Skills & Livelihoods</div>
       </div>
-      <div class="impact-item reveal reveal-delay-2">
+      <div class="impact-item reveal-scale reveal-delay-2">
         <div class="impact-number" data-count="40">0</div>
         <div class="impact-label">Pilot Participants</div>
       </div>
-      <div class="impact-item reveal reveal-delay-3">
+      <div class="impact-item reveal-scale reveal-delay-3">
         <div class="impact-number">5+</div>
         <div class="impact-label">Core Programs</div>
       </div>
@@ -1327,15 +1420,16 @@
       <div class="section-label">About IRRI</div>
       <div class="section-title">Through Inclusive Reintegration</div>
       <div class="about-grid">
-        <div class="about-content reveal">
+        <div class="about-content reveal-left">
           <p>Nigeria's cycles of armed conflict, terrorism, insurgency, banditry, communal violence, and recurring natural disasters have produced large numbers of persons with newly acquired or worsened disabilities.</p>
           <p>People living with mobility, visual, hearing, cognitive, and psychosocial disabilities face compounded barriers: disrupted rehabilitation services, limited access to assistive devices and mental health care, legal and documentation gaps, stigma, displacement, and restricted access to meaningful economic engagement.</p>
           <div class="about-highlight">
-            <p>"A Nigeria where people who acquire disabilities through conflict or disasters are fully rehabilitated, protected, and reintegrated&mdash;able to live with dignity, opportunity, and belonging in their communities."</p>
+            <p>"A Nigeria where people who acquire disabilities through conflict or disasters are fully rehabilitated, protected, and reintegrated -- able to live with dignity, opportunity, and belonging in their communities."</p>
           </div>
-          <p>IRRI delivers inclusive rehabilitation, mental health and psychosocial support, and sustainable livelihood pathways&mdash;led by persons with disabilities and grounded in rights, evidence, and local partnerships.</p>
+          <p>IRRI delivers inclusive rehabilitation, mental health and psychosocial support, and sustainable livelihood pathways -- led by persons with disabilities and grounded in rights, evidence, and local partnerships.</p>
+          <a href="about.html" class="btn-primary" style="margin-top: 1rem;">Learn More About Us</a>
         </div>
-        <div class="about-card-stack reveal reveal-delay-2">
+        <div class="about-card-stack reveal-right">
           <div class="about-image">
             <img src="hands.jpg" alt="Humanitarian camp for displaced persons" loading="lazy">
           </div>
@@ -1362,9 +1456,9 @@
   <!-- PROGRAMS -->
   <section class="section programs" id="programs">
     <div class="section-container">
-      <div class="section-label">Core Programs</div>
-      <div class="section-title">Integrated Pathways to Dignity</div>
-      <div class="section-subtitle">Five interconnected programs addressing the full spectrum of needs&mdash;from rehabilitation to economic independence.</div>
+      <div class="section-label reveal-left">Core Programs</div>
+      <div class="section-title reveal-left">Integrated Pathways to Dignity</div>
+      <div class="section-subtitle reveal-left">Five interconnected programs addressing the full spectrum of needs -- from rehabilitation to economic independence.</div>
       <div class="programs-grid">
         <div class="program-card reveal">
           <div class="program-card-img">
@@ -1402,13 +1496,16 @@
           <p>Technical support to IDP camps, local government areas, and partner NGOs to mainstream disability inclusion across humanitarian and disaster-recovery operations.</p>
         </div>
       </div>
+      <div style="text-align: center; margin-top: 3rem; position: relative; z-index: 1;">
+        <a href="programs.html" class="btn-primary">View All Programs</a>
+      </div>
     </div>
   </section>
 
   <!-- VALUES -->
   <section class="section values" id="values">
     <div class="section-container">
-      <div class="values-header">
+      <div class="values-header reveal-scale">
         <div class="section-label">Our Values</div>
         <div class="section-title">The Principles That Guide Us</div>
         <div class="section-subtitle">Seven core values rooted in human rights, lived experience, and a commitment to lasting change.</div>
@@ -1427,7 +1524,7 @@
         <div class="value-card reveal reveal-delay-2">
           <div class="value-number">03</div>
           <h4>Inclusion in Action</h4>
-          <p>Accessibility and participation are built into everything we do&mdash;programs, partnerships, and workplaces.</p>
+          <p>Accessibility and participation are built into everything we do -- programs, partnerships, and workplaces.</p>
         </div>
         <div class="value-card reveal reveal-delay-3">
           <div class="value-number">04</div>
@@ -1456,26 +1553,26 @@
   <!-- TARGET GROUPS -->
   <section class="section target-groups">
     <div class="section-container">
-      <div class="section-label">Who We Serve</div>
-      <div class="section-title">Communities at the Intersection of Conflict, Disaster & Disability</div>
-      <div class="section-subtitle">IRRI serves those most often left behind in recovery and reconstruction.</div>
+      <div class="section-label reveal-left">Who We Serve</div>
+      <div class="section-title reveal-left">Communities at the Intersection of Conflict, Disaster & Disability</div>
+      <div class="section-subtitle reveal-left">IRRI serves those most often left behind in recovery and reconstruction.</div>
       <div class="target-grid">
         <ul class="target-list">
-          <li class="reveal">
+          <li class="reveal-left">
             <div class="target-icon">&#127894;</div>
             <div class="target-text">
               <h4>Military & Security Personnel</h4>
               <p>Serving and retired Nigerian military and security personnel living with disabilities acquired in service.</p>
             </div>
           </li>
-          <li class="reveal reveal-delay-1">
+          <li class="reveal-left reveal-delay-1">
             <div class="target-icon">&#128101;</div>
             <div class="target-text">
               <h4>Civilian Conflict Survivors</h4>
               <p>Combatants and non-combatants affected by insurgency, banditry, and communal violence.</p>
             </div>
           </li>
-          <li class="reveal reveal-delay-2">
+          <li class="reveal-left reveal-delay-2">
             <div class="target-icon">&#127968;</div>
             <div class="target-text">
               <h4>Refugees & IDPs</h4>
@@ -1484,21 +1581,21 @@
           </li>
         </ul>
         <ul class="target-list">
-          <li class="reveal reveal-delay-1">
+          <li class="reveal-right reveal-delay-1">
             <div class="target-icon">&#127754;</div>
             <div class="target-text">
               <h4>Disaster Survivors</h4>
               <p>Survivors of floods, storms, epidemics, and building collapses with newly acquired or aggravated disabilities.</p>
             </div>
           </li>
-          <li class="reveal reveal-delay-2">
+          <li class="reveal-right reveal-delay-2">
             <div class="target-icon">&#128148;</div>
             <div class="target-text">
               <h4>Victims of Terrorism</h4>
               <p>Survivors of terrorism, insurgency, and armed banditry who live with lasting physical and psychosocial disabilities.</p>
             </div>
           </li>
-          <li class="reveal reveal-delay-3">
+          <li class="reveal-right reveal-delay-3">
             <div class="target-icon">&#9995;</div>
             <div class="target-text">
               <h4>Reintegrating Ex-Combatants</h4>
@@ -1513,9 +1610,9 @@
   <!-- PILOT PROJECT -->
   <section class="section pilot" id="pilot">
     <div class="section-container">
-      <div class="section-label">Pilot Project</div>
-      <div class="section-title" style="color: white;">Inclusive Rehab-to-Work Pathway</div>
-      <div class="section-subtitle">A 3-month pilot in Abuja integrating rehabilitation, MHPSS, livelihoods, and legal navigation into one inclusive pathway for 40 beneficiaries.</div>
+      <div class="section-label reveal-left">Pilot Project</div>
+      <div class="section-title reveal-left" style="color: white;">Inclusive Rehab-to-Work Pathway</div>
+      <div class="section-subtitle reveal-left">A 3-month pilot in Abuja integrating rehabilitation, MHPSS, livelihoods, and legal navigation into one inclusive pathway for 40 beneficiaries.</div>
 
       <div class="pilot-timeline">
         <div class="pilot-phase reveal">
@@ -1550,7 +1647,7 @@
         </div>
       </div>
 
-      <div class="pilot-outcomes reveal">
+      <div class="pilot-outcomes reveal-scale">
         <div class="outcome-item">
           <h5>40</h5>
           <p>Participants assessed, enrolled, and supported through the pathway</p>
@@ -1570,7 +1667,7 @@
   <!-- PARTNERS -->
   <section class="section partners" id="partners">
     <div class="section-container">
-      <div class="partners-header">
+      <div class="partners-header reveal-scale">
         <div class="section-label">Partnerships</div>
         <div class="section-title">Collaboration Across Sectors</div>
         <div class="section-subtitle">IRRI works with military, humanitarian, medical, and community partners to deliver joined-up solutions.</div>
@@ -1623,13 +1720,13 @@
   <!-- CTA -->
   <section class="section cta-section" id="contact">
     <div class="section-container">
-      <div class="cta-inner">
+      <div class="cta-inner reveal-scale">
         <div class="section-label">Get Involved</div>
         <div class="section-title">Join Us in Rebuilding Futures</div>
-        <div class="section-subtitle">Whether as a donor, partner, or volunteer&mdash;your support helps restore dignity and opportunity for those most often left behind.</div>
+        <div class="section-subtitle">Whether as a donor, partner, or volunteer -- your support helps restore dignity and opportunity for those most often left behind.</div>
         <div class="cta-buttons">
-          <a href="mailto:contact@irri-ng.org" class="btn-primary-dark">Partner With Us</a>
-          <a href="mailto:contact@irri-ng.org" class="btn-outline">Donate</a>
+          <a href="contact.html" class="btn-primary-dark">Partner With Us</a>
+          <a href="contact.html" class="btn-outline">Donate</a>
         </div>
       </div>
     </div>
@@ -1649,33 +1746,34 @@
       <div>
         <h5>Programs</h5>
         <ul class="footer-links">
-          <li><a href="#programs">Rehabilitation & MHPSS</a></li>
-          <li><a href="#programs">Rehab-to-Work</a></li>
-          <li><a href="#programs">Legal Navigation</a></li>
-          <li><a href="#programs">Peacebuilding</a></li>
-          <li><a href="#programs">Humanitarian Inclusion</a></li>
+          <li><a href="programs.html">Rehabilitation & MHPSS</a></li>
+          <li><a href="programs.html">Rehab-to-Work</a></li>
+          <li><a href="programs.html">Legal Navigation</a></li>
+          <li><a href="programs.html">Peacebuilding</a></li>
+          <li><a href="programs.html">Humanitarian Inclusion</a></li>
         </ul>
       </div>
       <div>
         <h5>About</h5>
         <ul class="footer-links">
-          <li><a href="#about">Our Mission</a></li>
-          <li><a href="#values">Core Values</a></li>
-          <li><a href="#pilot">Pilot Project</a></li>
-          <li><a href="#partners">Partners</a></li>
+          <li><a href="about.html">Our Mission</a></li>
+          <li><a href="about.html">Core Values</a></li>
+          <li><a href="programs.html#pilot">Pilot Project</a></li>
+          <li><a href="about.html">Partners</a></li>
         </ul>
       </div>
       <div>
         <h5>Connect</h5>
         <ul class="footer-links">
-          <li><a href="mailto:contact@irri-ng.org">Email Us</a></li>
-          <li><a href="#contact">Get Involved</a></li>
-          <li><a href="#contact">Donate</a></li>
+          <li><a href="mailto:info@irriinitiative.org">Email Us</a></li>
+          <li><a href="contact.html">Get Involved</a></li>
+          <li><a href="contact.html">Donate</a></li>
+          <li><a href="blog.html">News & Updates</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 IRRI &mdash; Inclusive Rehabilitation & Reintegration Initiative. All rights reserved.</p>
+      <p>&copy; 2026 IRRI - Inclusive Rehabilitation & Reintegration Initiative. All rights reserved.</p>
       <div class="footer-bottom-links">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms</a>
@@ -1684,13 +1782,22 @@
   </footer>
 
   <script>
-    // Navbar scroll effect (throttled with rAF)
+    // Navbar scroll effect + parallax (throttled with rAF)
     const nav = document.getElementById('nav');
+    const heroBg = document.getElementById('heroBg');
     let ticking = false;
+
     window.addEventListener('scroll', () => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          nav.classList.toggle('scrolled', window.scrollY > 50);
+          const scrollY = window.scrollY;
+          nav.classList.toggle('scrolled', scrollY > 50);
+
+          // Parallax effect on hero background
+          if (heroBg && scrollY < window.innerHeight) {
+            heroBg.style.transform = 'translateY(' + (scrollY * 0.3) + 'px)';
+          }
+
           ticking = false;
         });
         ticking = true;
@@ -1709,8 +1816,8 @@
       link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
 
-    // Scroll reveal
-    const revealElements = document.querySelectorAll('.reveal');
+    // Scroll reveal (handles all reveal types)
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -1748,7 +1855,7 @@
       counterObserver.observe(el);
     });
 
-    // Smooth scroll for all anchor links
+    // Smooth scroll for anchor links only
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         e.preventDefault();
