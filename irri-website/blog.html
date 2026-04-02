@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0A1628">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>News & Updates - IRRI | Inclusive Rehabilitation & Reintegration Initiative</title>
   <meta name="description" content="Stay informed about IRRI's latest news, impact stories, and developments in rehabilitation and reintegration for conflict-affected persons with disabilities in Nigeria.">
   <meta name="keywords" content="IRRI, news, updates, blog, disability, Nigeria, rehabilitation, reintegration, impact">
@@ -513,6 +518,15 @@
     .reveal-delay-4 { transition-delay: 0.4s; }
     .reveal-delay-5 { transition-delay: 0.5s; }
     .reveal-delay-6 { transition-delay: 0.6s; }
+
+    /* Touch-friendly */
+    @media (hover: none) {
+      .nav-links a, .btn-primary, .btn-secondary, .btn-primary-dark, .btn-outline, .nav-cta {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
+    }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 968px) {

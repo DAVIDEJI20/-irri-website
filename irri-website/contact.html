@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0A1628">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; form-action https://api.web3forms.com; upgrade-insecure-requests;">
   <title>Contact IRRI - Inclusive Rehabilitation & Reintegration Initiative</title>
   <meta name="description" content="Get in touch with IRRI. Reach out to learn more about our work, explore partnership opportunities, or support our mission for disability inclusion in Nigeria.">
   <meta name="keywords" content="IRRI, contact, get involved, partnership, donate, volunteer, disability, Nigeria">
@@ -707,6 +712,15 @@
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
 
+    /* Touch-friendly */
+    @media (hover: none) {
+      .nav-links a, .btn-primary, .btn-secondary, .btn-primary-dark, .btn-outline, .nav-cta {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
+    }
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 968px) {
       .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -727,6 +741,7 @@
         gap: 1.2rem;
       }
 
+      .contact-grid { grid-template-columns: 1fr; }
       .form-row { grid-template-columns: 1fr; }
       .social-links-grid { grid-template-columns: 1fr; }
       .footer-inner { grid-template-columns: 1fr; }
@@ -783,21 +798,22 @@
 
           <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
             <input type="hidden" name="access_key" value="b506d6e5-32b2-453d-9469-4a9e2b3e7fc2">
+            <input type="text" name="botcheck" style="display: none;">
 
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name" placeholder="Your full name" required>
+                <input type="text" id="name" name="name" placeholder="Your full name" required maxlength="100" pattern="[A-Za-z\s\-'.]{1,100}">
               </div>
               <div class="form-group">
                 <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required maxlength="254">
               </div>
             </div>
 
             <div class="form-group">
               <label for="subject">Subject</label>
-              <select id="subject" name="subject">
+              <select id="subject" name="subject" required>
                 <option value="" disabled selected>Select a topic</option>
                 <option value="General Inquiry">General Inquiry</option>
                 <option value="Partnership">Partnership</option>
@@ -810,7 +826,7 @@
 
             <div class="form-group">
               <label for="message">Message *</label>
-              <textarea id="message" name="message" rows="6" placeholder="Tell us how we can help..." required></textarea>
+              <textarea id="message" name="message" rows="6" placeholder="Tell us how we can help..." required maxlength="2000"></textarea>
             </div>
 
             <button type="submit" class="btn-submit" id="submitBtn">
@@ -976,6 +992,13 @@
 
     revealElements.forEach(el => observer.observe(el));
 
+    // Client-side sanitization: strip HTML tags from inputs
+    function sanitizeInput(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
     // Contact form submission
     const contactForm = document.getElementById('contactForm');
     const formSuccess = document.getElementById('formSuccess');
@@ -988,6 +1011,13 @@
       submitBtn.textContent = 'Sending...';
 
       const formData = new FormData(contactForm);
+
+      // Sanitize text inputs before submission
+      for (const [key, value] of formData.entries()) {
+        if (typeof value === 'string' && key !== 'access_key' && key !== 'botcheck') {
+          formData.set(key, sanitizeInput(value));
+        }
+      }
 
       fetch(contactForm.action, {
         method: 'POST',

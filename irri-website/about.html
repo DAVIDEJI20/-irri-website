@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="theme-color" content="#0A1628">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   <title>About IRRI - Inclusive Rehabilitation & Reintegration Initiative</title>
   <meta name="description" content="We believe every person, regardless of what happened to them, deserves the chance to rebuild. IRRI supports conflict- and disaster-affected persons with disabilities in Nigeria.">
   <meta name="keywords" content="IRRI, about, mission, vision, values, disability, Nigeria, rehabilitation, reintegration">
@@ -833,6 +838,15 @@
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
     .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* Touch-friendly */
+    @media (hover: none) {
+      .nav-links a, .btn-primary, .btn-secondary, .btn-primary-dark, .btn-outline, .nav-cta {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
+    }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 968px) {
