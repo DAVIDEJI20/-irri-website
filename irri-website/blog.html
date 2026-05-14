@@ -3,687 +3,178 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#0A1628">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <title>News & Updates - IRRI | Inclusive Rehabilitation & Reintegration Initiative</title>
+  <title>News &amp; Updates — IRRI | Inclusive Rehabilitation &amp; Reintegration Initiative</title>
   <meta name="description" content="Stay informed about IRRI's latest news, impact stories, and developments in rehabilitation and reintegration for conflict-affected persons with disabilities in Nigeria.">
-  <meta name="keywords" content="IRRI, news, updates, blog, disability, Nigeria, rehabilitation, reintegration, impact">
-  <meta name="author" content="IRRI - Inclusive Rehabilitation & Reintegration Initiative">
   <link rel="canonical" href="https://irriinitiative.org/blog.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="News & Updates - IRRI">
-  <meta property="og:description" content="Stay informed about IRRI's latest news, impact stories, and developments in rehabilitation and reintegration.">
+  <meta property="og:title" content="News &amp; Updates — IRRI">
+  <meta property="og:description" content="Stories of resilience, progress, and the people at the heart of our work.">
   <meta property="og:image" content="https://irriinitiative.org/community.jpg">
   <meta property="og:url" content="https://irriinitiative.org/blog.html">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="IRRI">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="News & Updates - IRRI">
-  <meta name="twitter:description" content="Stay informed about IRRI's latest news, impact stories, and developments in rehabilitation and reintegration.">
-  <meta name="twitter:image" content="https://irriinitiative.org/community.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --navy: #0A1628;
-      --navy-mid: #0F2341;
-      --teal: #0E7C7B;
-      --teal-light: #17A8A6;
-      --teal-pale: #E0F5F5;
-      --gold: #C8A84E;
-      --gold-light: #E8D48B;
-      --cream: #FAF8F2;
-      --warm-white: #FDFCF9;
-      --text-dark: #1A1A2E;
-      --text-mid: #4A4A5A;
-      --text-light: #7A7A8A;
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body: 'Outfit', system-ui, sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--font-body);
-      color: var(--text-dark);
-      background: var(--warm-white);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ===== NAVIGATION ===== */
-    .nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
-      will-change: background, padding;
-    }
-
-    .nav.scrolled {
-      background: rgba(10, 22, 40, 0.97);
-      padding: 0.6rem 2rem;
-      box-shadow: 0 4px 30px rgba(0,0,0,0.15);
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-    }
-
-    .nav-logo img {
-      height: 50px;
-      width: auto;
-      transition: height 0.4s;
-    }
-
-    .nav.scrolled .nav-logo img { height: 40px; }
-
-    .nav-logo-text {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: white;
-      letter-spacing: 0.02em;
-      line-height: 1.2;
-    }
-
-    .nav-logo-text span {
-      display: block;
-      font-size: 0.55rem;
-      font-family: var(--font-body);
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-top: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      transition: color 0.3s;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px; left: 0;
-      width: 0; height: 1.5px;
-      background: var(--gold);
-      transition: width 0.3s;
-    }
-
-    .nav-links a:hover { color: white; }
-    .nav-links a:hover::after { width: 100%; }
-
-    .nav-links a.active { color: white; }
-    .nav-links a.active::after { width: 100%; }
-
-    .nav-cta {
-      background: var(--gold) !important;
-      color: var(--navy) !important;
-      padding: 0.55rem 1.4rem;
-      border-radius: 4px;
-      font-weight: 600 !important;
-      font-size: 0.8rem !important;
-      letter-spacing: 0.05em !important;
-      text-transform: uppercase;
-      transition: all 0.3s !important;
-    }
-
-    .nav-cta:hover {
-      background: var(--gold-light) !important;
-      transform: translateY(-1px);
-    }
-
-    .nav-cta::after { display: none !important; }
-
-    .mobile-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 5px;
-    }
-
-    .mobile-toggle span {
-      width: 24px; height: 2px;
-      background: white;
-      transition: all 0.3s;
-      border-radius: 2px;
-    }
-
-    /* ===== PAGE HERO ===== */
-    .page-hero {
-      position: relative;
-      min-height: 40vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background:
-        linear-gradient(135deg, rgba(10,22,40,0.94) 0%, rgba(15,35,65,0.9) 40%, rgba(10,22,40,0.88) 100%);
-      overflow: hidden;
-    }
-
-    .page-hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 120px;
-      background: linear-gradient(to top, var(--warm-white), transparent);
-      z-index: 2;
-    }
-
-    .page-hero-content {
-      position: relative;
-      z-index: 3;
-      padding: 8rem 2rem 4rem;
-      max-width: 800px;
-    }
-
-    .page-hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(200, 168, 78, 0.12);
-      border: 1px solid rgba(200, 168, 78, 0.25);
-      color: var(--gold-light);
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 0.5rem 1.2rem;
-      border-radius: 100px;
-      margin-bottom: 1.5rem;
-    }
-
-    .page-hero-badge::before {
-      content: '';
-      width: 6px; height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-    }
-
-    .page-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 5vw, 3.8rem);
-      font-weight: 600;
-      color: white;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-
-    .page-hero p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.7);
-      line-height: 1.7;
-      font-weight: 300;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* ===== SECTION SHARED ===== */
-    .section {
-      padding: 7rem 2rem;
-    }
-
-    .section-container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 1rem;
-    }
-
-    .section-label::before {
-      content: '';
-      width: 30px;
-      height: 1.5px;
-      background: var(--gold);
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1.15;
-      margin-bottom: 1.2rem;
-    }
-
-    .section-subtitle {
-      font-size: 1.05rem;
-      color: var(--text-mid);
-      line-height: 1.7;
-      max-width: 600px;
-      font-weight: 300;
-    }
-
-    /* ===== BLOG GRID ===== */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      margin-top: 3rem;
-    }
-
-    .blog-card {
-      background: white;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 2px 16px rgba(10, 22, 40, 0.06);
-      transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .blog-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 40px rgba(10, 22, 40, 0.12);
-    }
-
-    .blog-card-image {
-      position: relative;
-      overflow: hidden;
-      height: 220px;
-    }
-
-    .blog-card-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    .blog-card:hover .blog-card-image img {
-      transform: scale(1.05);
-    }
-
-    .blog-card-category {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      background: var(--teal);
-      color: white;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.35rem 0.85rem;
-      border-radius: 4px;
-    }
-
-    .blog-card-body {
-      padding: 1.5rem;
-    }
-
-    .blog-card-date {
-      font-size: 0.78rem;
-      color: var(--text-light);
-      font-weight: 400;
-      margin-bottom: 0.6rem;
-    }
-
-    .blog-card-title {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1.25;
-      margin-bottom: 0.75rem;
-    }
-
-    .blog-card-excerpt {
-      font-size: 0.92rem;
-      color: var(--text-mid);
-      line-height: 1.7;
-      font-weight: 300;
-      margin-bottom: 1.2rem;
-    }
-
-    .blog-card-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--teal);
-      text-decoration: none;
-      transition: color 0.3s, gap 0.3s;
-    }
-
-    .blog-card-link:hover {
-      color: var(--teal-light);
-      gap: 0.6rem;
-    }
-
-    /* ===== FOOTER ===== */
-    .footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.5);
-      padding: 4rem 2rem 2rem;
-    }
-
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 3rem;
-    }
-
-    .footer-brand p {
-      font-size: 0.88rem;
-      line-height: 1.7;
-      margin-top: 1rem;
-      max-width: 300px;
-    }
-
-    .footer-brand .nav-logo-text { font-size: 1.4rem; }
-
-    .footer h5 {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 1.2rem;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .footer-links a {
-      color: rgba(255,255,255,0.45);
-      text-decoration: none;
-      font-size: 0.88rem;
-      transition: color 0.3s;
-    }
-
-    .footer-links a:hover { color: var(--gold-light); }
-
-    .footer-bottom {
-      max-width: 1100px;
-      margin: 3rem auto 0;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
-    }
-
-    .footer-bottom-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .footer-bottom-links a {
-      color: rgba(255,255,255,0.35);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
-
-    /* ===== SCROLL ANIMATIONS ===== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: opacity, transform;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-60px);
-      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: opacity, transform;
-    }
-
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(60px);
-      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: opacity, transform;
-    }
-
-    .reveal-left.visible, .reveal-right.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .reveal-scale {
-      opacity: 0;
-      transform: scale(0.9);
-      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: opacity, transform;
-    }
-
-    .reveal-scale.visible {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-    .reveal-delay-5 { transition-delay: 0.5s; }
-    .reveal-delay-6 { transition-delay: 0.6s; }
-
-    /* Touch-friendly */
-    @media (hover: none) {
-      .nav-links a, .btn-primary, .btn-secondary, .btn-primary-dark, .btn-outline, .nav-cta {
-        min-height: 44px;
-        display: inline-flex;
-        align-items: center;
-      }
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 968px) {
-      .blog-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    }
-
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .mobile-toggle { display: flex; }
-
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%; left: 0; right: 0;
-        background: rgba(10,22,40,0.98);
-        padding: 2rem;
-        gap: 1.2rem;
-      }
-
-      .blog-grid { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
-
-      .section { padding: 4rem 1.5rem; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div style="overflow-x: hidden; width: 100%; position: relative;">
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- NAVIGATION -->
-  <nav class="nav" id="nav">
-    <a href="index.html" class="nav-logo">
-      <img src="logo-nav.png" alt="IRRI Logo">
+  <nav class="nav" id="nav" aria-label="Primary navigation">
+    <a href="index.html" class="nav-logo" aria-label="IRRI Home">
+      <img src="logo-nav.png" alt="IRRI" width="48" height="48">
       <div class="nav-logo-text">
         IRRI
-        <span>Inclusive Rehabilitation & Reintegration</span>
+        <span>Inclusive Rehabilitation &amp; Reintegration</span>
       </div>
     </a>
-    <ul class="nav-links" id="navLinks">
+    <ul class="nav-links" role="list">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="programs.html">Programs</a></li>
-      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="blog.html" class="active">Updates</a></li>
       <li><a href="contact.html" class="nav-cta">Get Involved</a></li>
     </ul>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu" aria-modal="true">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="blog.html">Updates</a>
+    <a href="contact.html" class="nav-cta">Get Involved</a>
+  </div>
+
   <!-- PAGE HERO -->
-  <section class="page-hero">
+  <section class="page-hero" id="main-content" aria-label="Updates page header">
+    <div class="page-hero-bg" style="background-image:url('community.jpg');" aria-hidden="true"></div>
+    <div class="page-hero-overlay" aria-hidden="true"></div>
     <div class="page-hero-content">
-      <div class="page-hero-badge">Latest Stories</div>
-      <h1>News & Updates</h1>
-      <p>Stories of resilience, progress, and the people at the heart of our work</p>
+      <p class="page-hero-label reveal">Latest Stories</p>
+      <h1 class="reveal reveal-delay-1">News &amp; Updates</h1>
+      <p class="reveal reveal-delay-2">Stories of resilience, progress, and the people at the heart of our work.</p>
     </div>
   </section>
 
-  <!-- BLOG POSTS -->
-  <section class="section">
+  <!-- COMING SOON -->
+  <section class="section" aria-labelledby="blog-heading">
     <div class="section-container">
-      <div class="section-label">From the Field</div>
-      <h2 class="section-title">Coming Soon</h2>
-      <p class="section-subtitle">We are working on bringing you stories from the field, updates on our programs, and the voices of the communities we serve. Check back soon.</p>
+      <div class="section-kicker reveal">From the Field</div>
+      <h2 class="section-title reveal" id="blog-heading">Coming Soon</h2>
+      <p class="section-subtitle reveal">
+        We are working on bringing you stories from the field, updates on our programs,
+        and the voices of the communities we serve. Check back soon.
+      </p>
+
+      <!-- Placeholder cards — visual structure for when content arrives -->
+      <div class="blog-grid" style="margin-top:3.5rem;">
+        <div class="reveal" style="border:1px solid var(--border); border-radius:4px; overflow:hidden;">
+          <div style="aspect-ratio:16/10; background:var(--teal-pale);"></div>
+          <div style="padding:1.5rem;">
+            <div style="font-size:0.68rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal); margin-bottom:0.75rem;">Impact Stories</div>
+            <div style="height:1.3rem; width:85%; background:var(--border); border-radius:2px; margin-bottom:0.75rem;"></div>
+            <div style="height:1rem; width:100%; background:var(--border); border-radius:2px; margin-bottom:0.5rem;"></div>
+            <div style="height:1rem; width:70%; background:var(--border); border-radius:2px;"></div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-1" style="border:1px solid var(--border); border-radius:4px; overflow:hidden;">
+          <div style="aspect-ratio:16/10; background:oklch(95% 0.008 80);"></div>
+          <div style="padding:1.5rem;">
+            <div style="font-size:0.68rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal); margin-bottom:0.75rem;">Program Updates</div>
+            <div style="height:1.3rem; width:90%; background:var(--border); border-radius:2px; margin-bottom:0.75rem;"></div>
+            <div style="height:1rem; width:100%; background:var(--border); border-radius:2px; margin-bottom:0.5rem;"></div>
+            <div style="height:1rem; width:60%; background:var(--border); border-radius:2px;"></div>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-2" style="border:1px solid var(--border); border-radius:4px; overflow:hidden;">
+          <div style="aspect-ratio:16/10; background:var(--teal-pale);"></div>
+          <div style="padding:1.5rem;">
+            <div style="font-size:0.68rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--teal); margin-bottom:0.75rem;">Field Notes</div>
+            <div style="height:1.3rem; width:75%; background:var(--border); border-radius:2px; margin-bottom:0.75rem;"></div>
+            <div style="height:1rem; width:100%; background:var(--border); border-radius:2px; margin-bottom:0.5rem;"></div>
+            <div style="height:1rem; width:80%; background:var(--border); border-radius:2px;"></div>
+          </div>
+        </div>
+      </div>
+
+      <p class="reveal" style="margin-top:3rem; text-align:center;">
+        <a href="contact.html" class="btn btn-outline">Be Notified When We Publish</a>
+      </p>
     </div>
   </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band" aria-labelledby="cta-heading">
+    <div class="cta-band-inner reveal">
+      <h2 id="cta-heading">Want to Hear Our Stories First?</h2>
+      <p>Sign up to receive updates from the field, program milestones, and voices from the communities we serve.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-gold">
+          Get In Touch
+          <svg class="btn-arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer" aria-label="Site footer">
     <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="nav-logo-text">
-          IRRI
-          <span>Inclusive Rehabilitation & Reintegration Initiative</span>
+      <div class="footer-top">
+        <div>
+          <img src="logo-nav.png" alt="IRRI" class="footer-brand-logo" width="44" height="44">
+          <p class="footer-brand-desc">Reclaiming Dignity. Rebuilding Futures.<br>Nigeria &bull; Aligned with UN CRPD</p>
         </div>
-        <p>Reclaiming Dignity. Rebuilding Futures.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Nigeria &bull; Aligned with UN CRPD</p>
+        <div>
+          <h3 class="footer-col-title">Programs</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="programs.html">Rehabilitation &amp; MHPSS</a></li>
+            <li><a href="programs.html">Rehab-to-Work</a></li>
+            <li><a href="programs.html">Legal Navigation</a></li>
+            <li><a href="programs.html">Peacebuilding</a></li>
+            <li><a href="programs.html">Humanitarian Inclusion</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">About</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="about.html">Our Mission</a></li>
+            <li><a href="about.html">Core Values</a></li>
+            <li><a href="programs.html#pilot">Pilot Project</a></li>
+            <li><a href="about.html">Partners</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Connect</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="mailto:info@irriinitiative.org">info@irriinitiative.org</a></li>
+            <li><a href="contact.html">Get Involved</a></li>
+            <li><a href="contact.html">Donate</a></li>
+            <li><a href="blog.html">News &amp; Updates</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h5>Programs</h5>
-        <ul class="footer-links">
-          <li><a href="programs.html">Rehabilitation & MHPSS</a></li>
-          <li><a href="programs.html">Rehab-to-Work</a></li>
-          <li><a href="programs.html">Legal Navigation</a></li>
-          <li><a href="programs.html">Peacebuilding</a></li>
-          <li><a href="programs.html">Humanitarian Inclusion</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>About</h5>
-        <ul class="footer-links">
-          <li><a href="about.html">Our Mission</a></li>
-          <li><a href="about.html">Core Values</a></li>
-          <li><a href="programs.html#pilot">Pilot Project</a></li>
-          <li><a href="about.html">Partners</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Connect</h5>
-        <ul class="footer-links">
-          <li><a href="mailto:info@irriinitiative.org">Email Us</a></li>
-          <li><a href="contact.html">Get Involved</a></li>
-          <li><a href="contact.html">Donate</a></li>
-          <li><a href="blog.html">News & Updates</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 IRRI - Inclusive Rehabilitation & Reintegration Initiative. All rights reserved.</p>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms</a>
+      <div class="footer-bottom">
+        <p class="footer-legal">&copy; 2026 IRRI &mdash; Inclusive Rehabilitation &amp; Reintegration Initiative. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#" style="margin-right:1.25rem;">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <script>
-    // Navbar scroll effect (throttled with rAF)
-    const nav = document.getElementById('nav');
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          nav.classList.toggle('scrolled', window.scrollY > 50);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
+  <script type="module" src="animations.js"></script>
 
-    // Mobile menu toggle
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navLinks = document.getElementById('navLinks');
-    mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
-    });
-
-    // Scroll reveal
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-    revealElements.forEach(el => observer.observe(el));
-  </script>
-</div>
 </body>
 </html>

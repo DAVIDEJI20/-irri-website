@@ -3,1205 +3,353 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="theme-color" content="#0A1628">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-  <title>About IRRI - Inclusive Rehabilitation & Reintegration Initiative</title>
+  <title>About IRRI — Inclusive Rehabilitation &amp; Reintegration Initiative</title>
   <meta name="description" content="We believe every person, regardless of what happened to them, deserves the chance to rebuild. IRRI supports conflict- and disaster-affected persons with disabilities in Nigeria.">
-  <meta name="keywords" content="IRRI, about, mission, vision, values, disability, Nigeria, rehabilitation, reintegration">
-  <meta name="author" content="IRRI - Inclusive Rehabilitation & Reintegration Initiative">
   <link rel="canonical" href="https://irriinitiative.org/about.html">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="About IRRI - Inclusive Rehabilitation & Reintegration Initiative">
+  <meta property="og:title" content="About IRRI — Inclusive Rehabilitation &amp; Reintegration Initiative">
   <meta property="og:description" content="Learn about IRRI's mission, vision, values, and the communities we serve in Nigeria.">
   <meta property="og:image" content="https://irriinitiative.org/community.jpg">
   <meta property="og:url" content="https://irriinitiative.org/about.html">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="IRRI">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="About IRRI - Inclusive Rehabilitation & Reintegration Initiative">
-  <meta name="twitter:description" content="Learn about IRRI's mission, vision, values, and the communities we serve in Nigeria.">
-  <meta name="twitter:image" content="https://irriinitiative.org/community.jpg">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --navy: #0A1628;
-      --navy-mid: #0F2341;
-      --teal: #0E7C7B;
-      --teal-light: #17A8A6;
-      --teal-pale: #E0F5F5;
-      --gold: #C8A84E;
-      --gold-light: #E8D48B;
-      --cream: #FAF8F2;
-      --warm-white: #FDFCF9;
-      --text-dark: #1A1A2E;
-      --text-mid: #4A4A5A;
-      --text-light: #7A7A8A;
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body: 'Outfit', system-ui, sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: var(--font-body);
-      color: var(--text-dark);
-      background: var(--warm-white);
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ===== NAVIGATION ===== */
-    .nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 1000;
-      padding: 1rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: background 0.4s, padding 0.4s, box-shadow 0.4s;
-      will-change: background, padding;
-    }
-
-    .nav.scrolled {
-      background: rgba(10, 22, 40, 0.97);
-      padding: 0.6rem 2rem;
-      box-shadow: 0 4px 30px rgba(0,0,0,0.15);
-    }
-
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      text-decoration: none;
-    }
-
-    .nav-logo img {
-      height: 50px;
-      width: auto;
-      transition: height 0.4s;
-    }
-
-    .nav.scrolled .nav-logo img { height: 40px; }
-
-    .nav-logo-text {
-      font-family: var(--font-display);
-      font-size: 1.3rem;
-      font-weight: 600;
-      color: white;
-      letter-spacing: 0.02em;
-      line-height: 1.2;
-    }
-
-    .nav-logo-text span {
-      display: block;
-      font-size: 0.55rem;
-      font-family: var(--font-body);
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-top: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-      align-items: center;
-    }
-
-    .nav-links a {
-      color: rgba(255,255,255,0.85);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 400;
-      letter-spacing: 0.04em;
-      transition: color 0.3s;
-      position: relative;
-    }
-
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px; left: 0;
-      width: 0; height: 1.5px;
-      background: var(--gold);
-      transition: width 0.3s;
-    }
-
-    .nav-links a:hover { color: white; }
-    .nav-links a:hover::after { width: 100%; }
-
-    .nav-links a.active { color: white; }
-    .nav-links a.active::after { width: 100%; }
-
-    .nav-cta {
-      background: var(--gold) !important;
-      color: var(--navy) !important;
-      padding: 0.55rem 1.4rem;
-      border-radius: 4px;
-      font-weight: 600 !important;
-      font-size: 0.8rem !important;
-      letter-spacing: 0.05em !important;
-      text-transform: uppercase;
-      transition: all 0.3s !important;
-    }
-
-    .nav-cta:hover {
-      background: var(--gold-light) !important;
-      transform: translateY(-1px);
-    }
-
-    .nav-cta::after { display: none !important; }
-
-    .mobile-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      background: none;
-      border: none;
-      padding: 5px;
-    }
-
-    .mobile-toggle span {
-      width: 24px; height: 2px;
-      background: white;
-      transition: all 0.3s;
-      border-radius: 2px;
-    }
-
-    /* ===== PAGE HERO ===== */
-    .page-hero {
-      position: relative;
-      min-height: 40vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background:
-        linear-gradient(135deg, rgba(10,22,40,0.88) 0%, rgba(15,35,65,0.82) 40%, rgba(12,53,71,0.78) 70%, rgba(14,124,123,0.72) 100%),
-        url('community.jpg') center/cover no-repeat;
-      overflow: hidden;
-    }
-
-    .page-hero::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 120px;
-      background: linear-gradient(to top, var(--warm-white), transparent);
-      z-index: 2;
-    }
-
-    .page-hero-content {
-      position: relative;
-      z-index: 3;
-      padding: 8rem 2rem 4rem;
-      max-width: 800px;
-    }
-
-    .page-hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(200, 168, 78, 0.12);
-      border: 1px solid rgba(200, 168, 78, 0.25);
-      color: var(--gold-light);
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      padding: 0.5rem 1.2rem;
-      border-radius: 100px;
-      margin-bottom: 1.5rem;
-    }
-
-    .page-hero-badge::before {
-      content: '';
-      width: 6px; height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-    }
-
-    .page-hero h1 {
-      font-family: var(--font-display);
-      font-size: clamp(2.5rem, 5vw, 3.8rem);
-      font-weight: 600;
-      color: white;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-
-    .page-hero p {
-      font-size: 1.1rem;
-      color: rgba(255,255,255,0.7);
-      line-height: 1.7;
-      font-weight: 300;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    /* ===== SECTION SHARED ===== */
-    .section {
-      padding: 7rem 2rem;
-    }
-
-    .section-container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--teal);
-      margin-bottom: 1rem;
-    }
-
-    .section-label::before {
-      content: '';
-      width: 30px;
-      height: 1.5px;
-      background: var(--gold);
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 3.5vw, 2.8rem);
-      font-weight: 600;
-      color: var(--navy);
-      line-height: 1.15;
-      margin-bottom: 1.2rem;
-    }
-
-    .section-subtitle {
-      font-size: 1.05rem;
-      color: var(--text-mid);
-      line-height: 1.7;
-      max-width: 600px;
-      font-weight: 300;
-    }
-
-    /* ===== ABOUT ===== */
-    .about {
-      background: var(--warm-white);
-    }
-
-    .about-image {
-      border-radius: 12px;
-      overflow: hidden;
-      margin-bottom: 1.5rem;
-      height: 220px;
-    }
-
-    .about-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s;
-    }
-
-    .about-image:hover img {
-      transform: scale(1.05);
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-      margin-top: 3rem;
-    }
-
-    .about-content p {
-      color: var(--text-mid);
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-      font-weight: 300;
-    }
-
-    .about-highlight {
-      background: linear-gradient(135deg, var(--teal-pale), rgba(200,168,78,0.08));
-      border-left: 3px solid var(--gold);
-      padding: 1.5rem 2rem;
-      border-radius: 0 8px 8px 0;
-      margin: 2rem 0;
-    }
-
-    .about-highlight p {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 500;
-      color: var(--navy);
-      font-style: italic;
-      line-height: 1.6;
-      margin-bottom: 0 !important;
-    }
-
-    .about-card-stack {
-      display: grid;
-      gap: 1.2rem;
-    }
-
-    .about-card {
-      background: white;
-      border-radius: 12px;
-      padding: 1.8rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-      border: 1px solid rgba(0,0,0,0.04);
-      transition: all 0.4s;
-    }
-
-    .about-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
-    }
-
-    .about-card-icon {
-      width: 48px; height: 48px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-    }
-
-    .about-card h4 {
-      font-family: var(--font-display);
-      font-size: 1.15rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 0.4rem;
-    }
-
-    .about-card p {
-      font-size: 0.88rem;
-      color: var(--text-mid);
-      line-height: 1.6;
-    }
-
-    /* ===== MISSION/VISION CARDS ===== */
-    .mv-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      margin-top: 3rem;
-    }
-
-    .mv-card {
-      background: white;
-      border-radius: 12px;
-      padding: 2.5rem;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.04);
-      border: 1px solid rgba(0,0,0,0.04);
-      transition: all 0.4s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .mv-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-    }
-
-    .mv-card:first-child::before {
-      background: linear-gradient(90deg, var(--teal), var(--teal-light));
-    }
-
-    .mv-card:last-child::before {
-      background: linear-gradient(90deg, var(--gold), var(--gold-light));
-    }
-
-    .mv-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    }
-
-    .mv-card-icon {
-      width: 56px; height: 56px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .mv-card h3 {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 0.8rem;
-    }
-
-    .mv-card p {
-      font-size: 0.95rem;
-      color: var(--text-mid);
-      line-height: 1.75;
-      font-weight: 300;
-    }
-
-    /* ===== VALUES ===== */
-    .values {
-      background: var(--cream);
-      position: relative;
-    }
-
-    .values-header {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-
-    .values-header .section-label { justify-content: center; }
-    .values-header .section-subtitle { margin: 0 auto; }
-
-    .values-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .value-card {
-      background: white;
-      border-radius: 12px;
-      padding: 2rem;
-      border: 1px solid rgba(0,0,0,0.04);
-      transition: all 0.4s;
-      position: relative;
-    }
-
-    .value-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.06);
-    }
-
-    .value-number {
-      font-family: var(--font-display);
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: rgba(14,124,123,0.1);
-      line-height: 1;
-      margin-bottom: 0.8rem;
-    }
-
-    .value-card h4 {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 0.5rem;
-    }
-
-    .value-card p {
-      font-size: 0.88rem;
-      color: var(--text-mid);
-      line-height: 1.65;
-      font-weight: 300;
-    }
-
-    /* ===== TARGET GROUPS ===== */
-    .target-groups {
-      background: white;
-    }
-
-    .target-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-      margin-top: 3rem;
-    }
-
-    .target-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .target-list li {
-      display: flex;
-      gap: 1rem;
-      align-items: flex-start;
-      padding: 1.2rem 1.5rem;
-      background: var(--cream);
-      border-radius: 10px;
-      transition: all 0.3s;
-      border: 1px solid transparent;
-    }
-
-    .target-list li:hover {
-      border-color: var(--teal);
-      background: white;
-      box-shadow: 0 4px 15px rgba(14,124,123,0.08);
-    }
-
-    .target-icon {
-      flex-shrink: 0;
-      width: 40px; height: 40px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--teal), var(--teal-light));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.1rem;
-    }
-
-    .target-text h4 {
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: var(--navy);
-      margin-bottom: 0.2rem;
-    }
-
-    .target-text p {
-      font-size: 0.82rem;
-      color: var(--text-light);
-      line-height: 1.5;
-    }
-
-    /* ===== RIGHTS FRAMEWORK ===== */
-    .framework {
-      background: linear-gradient(135deg, var(--navy-mid) 0%, var(--navy) 100%);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .framework::before {
-      content: '';
-      position: absolute;
-      top: -100px; right: -100px;
-      width: 500px; height: 500px;
-      border: 1px solid rgba(200,168,78,0.06);
-      border-radius: 50%;
-    }
-
-    .framework .section-label { color: var(--gold-light); }
-    .framework .section-title { color: white; }
-    .framework .section-subtitle { color: rgba(255,255,255,0.6); }
-
-    .framework-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      margin-top: 3rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .framework-text p {
-      color: rgba(255,255,255,0.6);
-      line-height: 1.8;
-      margin-bottom: 1.5rem;
-      font-weight: 300;
-    }
-
-    .framework-cards {
-      display: grid;
-      gap: 1.2rem;
-    }
-
-    .framework-card {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 12px;
-      padding: 1.5rem;
-      transition: all 0.4s;
-    }
-
-    .framework-card:hover {
-      background: rgba(255,255,255,0.07);
-      border-color: rgba(255,255,255,0.15);
-      transform: translateY(-2px);
-    }
-
-    .framework-card h4 {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: white;
-      margin-bottom: 0.4rem;
-    }
-
-    .framework-card p {
-      font-size: 0.85rem;
-      color: rgba(255,255,255,0.5);
-      line-height: 1.6;
-    }
-
-    /* ===== CTA SECTION ===== */
-    .cta-section {
-      background: var(--cream);
-      text-align: center;
-    }
-
-    .cta-inner {
-      max-width: 700px;
-      margin: 0 auto;
-    }
-
-    .cta-inner .section-label { justify-content: center; }
-    .cta-inner .section-title { margin-bottom: 1rem; }
-    .cta-inner .section-subtitle { margin: 0 auto 2.5rem; max-width: 550px; }
-
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .btn-primary-dark {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: var(--navy);
-      color: white;
-      padding: 0.9rem 2rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 0.85rem;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      transition: all 0.3s;
-    }
-
-    .btn-primary-dark:hover {
-      background: var(--navy-mid);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(10,22,40,0.2);
-    }
-
-    .btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: transparent;
-      color: var(--navy);
-      padding: 0.9rem 2rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 0.85rem;
-      letter-spacing: 0.04em;
-      border: 1.5px solid var(--navy);
-      transition: all 0.3s;
-    }
-
-    .btn-outline:hover {
-      background: var(--navy);
-      color: white;
-    }
-
-    /* ===== FOOTER ===== */
-    .footer {
-      background: var(--navy);
-      color: rgba(255,255,255,0.5);
-      padding: 4rem 2rem 2rem;
-    }
-
-    .footer-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 3rem;
-    }
-
-    .footer-brand p {
-      font-size: 0.88rem;
-      line-height: 1.7;
-      margin-top: 1rem;
-      max-width: 300px;
-    }
-
-    .footer-brand .nav-logo-text { font-size: 1.4rem; }
-
-    .footer h5 {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 1.2rem;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.6rem;
-    }
-
-    .footer-links a {
-      color: rgba(255,255,255,0.45);
-      text-decoration: none;
-      font-size: 0.88rem;
-      transition: color 0.3s;
-    }
-
-    .footer-links a:hover { color: var(--gold-light); }
-
-    .footer-bottom {
-      max-width: 1100px;
-      margin: 3rem auto 0;
-      padding-top: 2rem;
-      border-top: 1px solid rgba(255,255,255,0.06);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
-    }
-
-    .footer-bottom-links {
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    .footer-bottom-links a {
-      color: rgba(255,255,255,0.35);
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    .footer-bottom-links a:hover { color: rgba(255,255,255,0.7); }
-
-    /* ===== SCROLL ANIMATIONS ===== */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: opacity, transform;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-60px);
-      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: opacity, transform;
-    }
-
-    .reveal-right {
-      opacity: 0;
-      transform: translateX(60px);
-      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: opacity, transform;
-    }
-
-    .reveal-left.visible, .reveal-right.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .reveal-scale {
-      opacity: 0;
-      transform: scale(0.9);
-      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-      will-change: opacity, transform;
-    }
-
-    .reveal-scale.visible {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-    .reveal-delay-4 { transition-delay: 0.4s; }
-
-    /* Touch-friendly */
-    @media (hover: none) {
-      .nav-links a, .btn-primary, .btn-secondary, .btn-primary-dark, .btn-outline, .nav-cta {
-        min-height: 44px;
-        display: inline-flex;
-        align-items: center;
-      }
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media (max-width: 968px) {
-      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-      .mv-grid { grid-template-columns: 1fr; }
-      .target-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .framework-content { grid-template-columns: 1fr; gap: 2rem; }
-      .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    }
-
-    @media (max-width: 640px) {
-      .nav-links { display: none; }
-      .mobile-toggle { display: flex; }
-
-      .nav-links.open {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%; left: 0; right: 0;
-        background: rgba(10,22,40,0.98);
-        padding: 2rem;
-        gap: 1.2rem;
-      }
-
-      .values-grid { grid-template-columns: 1fr; }
-      .footer-inner { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
-
-      .section { padding: 4rem 1.5rem; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div style="overflow-x: hidden; width: 100%; position: relative;">
+
+  <a class="skip-link" href="#main-content">Skip to content</a>
 
   <!-- NAVIGATION -->
-  <nav class="nav" id="nav">
-    <a href="index.html" class="nav-logo">
-      <img src="logo-nav.png" alt="IRRI Logo">
+  <nav class="nav" id="nav" aria-label="Primary navigation">
+    <a href="index.html" class="nav-logo" aria-label="IRRI Home">
+      <img src="logo-nav.png" alt="IRRI" width="48" height="48">
       <div class="nav-logo-text">
         IRRI
-        <span>Inclusive Rehabilitation & Reintegration</span>
+        <span>Inclusive Rehabilitation &amp; Reintegration</span>
       </div>
     </a>
-    <ul class="nav-links" id="navLinks">
+    <ul class="nav-links" role="list">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active">About</a></li>
       <li><a href="programs.html">Programs</a></li>
-      <li><a href="blog.html">Blog</a></li>
+      <li><a href="blog.html">Updates</a></li>
       <li><a href="contact.html" class="nav-cta">Get Involved</a></li>
     </ul>
-    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mobileMenu">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
+  <!-- MOBILE MENU OVERLAY -->
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigation menu" aria-modal="true">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="programs.html">Programs</a>
+    <a href="blog.html">Updates</a>
+    <a href="contact.html" class="nav-cta">Get Involved</a>
+  </div>
+
   <!-- PAGE HERO -->
-  <section class="page-hero">
+  <section class="page-hero" id="main-content" aria-label="About page header">
+    <div class="page-hero-bg" style="background-image:url('community.jpg');" aria-hidden="true"></div>
+    <div class="page-hero-overlay" aria-hidden="true"></div>
     <div class="page-hero-content">
-      <div class="page-hero-badge">Our Story</div>
-      <h1>About IRRI</h1>
-      <p>We believe every person, regardless of what happened to them, deserves the chance to rebuild.</p>
+      <p class="page-hero-label reveal">Our Story</p>
+      <h1 class="reveal reveal-delay-1">About IRRI</h1>
+      <p class="reveal reveal-delay-2">We believe every person, regardless of what happened to them, deserves the chance to rebuild.</p>
     </div>
   </section>
 
-  <!-- ABOUT -->
-  <section class="section about">
+  <!-- WHO WE ARE -->
+  <section class="section" aria-labelledby="who-heading">
     <div class="section-container">
-      <div class="section-label reveal-left">Who We Are</div>
-      <div class="section-title reveal-left">Through Inclusive Reintegration</div>
-      <div class="about-grid">
-        <div class="about-content reveal-left">
-          <p>Across Nigeria, armed conflict, terrorism, and natural disasters leave thousands of people with newly acquired disabilities. For most, the support system stops when the emergency ends.</p>
-          <p>People living with physical, sensory, and psychosocial disabilities face compounded barriers: disrupted services, limited access to healthcare and assistive devices, legal gaps, stigma, and exclusion from economic life. They are overlooked not because they lack potential, but because systems were not built with them in mind.</p>
-          <div class="about-highlight">
-            <p>"We see a Nigeria where no one is defined by what happened to them. Where people who acquire disabilities through conflict or disaster are fully supported to rebuild their lives, on their own terms, in their own communities."</p>
-          </div>
-          <p>People in our programs gain access to rehabilitation, mental health support, and sustainable livelihood pathways. Everything we do is led by persons with disabilities and grounded in rights, evidence, and local partnerships.</p>
+      <div class="about-split">
+        <div class="about-image-block reveal">
+          <img src="hands.jpg" alt="Humanitarian support for displaced persons" loading="lazy" width="600" height="480">
+          <p class="about-image-caption">Abuja, Nigeria &bull; Community outreach and support</p>
         </div>
-        <div class="about-card-stack reveal-right">
-          <div class="about-image">
-            <img src="hands.jpg" alt="Humanitarian camp for displaced persons" loading="lazy">
-          </div>
-          <div class="about-card">
-            <div class="about-card-icon" style="background: rgba(14,124,123,0.1); color: var(--teal);">&#9878;</div>
-            <h4>Rights Framework</h4>
-            <p>Guided by the UN Convention on the Rights of Persons with Disabilities: nothing about us, without us.</p>
-          </div>
+        <div>
+          <div class="section-kicker reveal">Who We Are</div>
+          <h2 class="section-title reveal" id="who-heading">Through Inclusive Reintegration</h2>
+          <p class="section-subtitle reveal">
+            Across Nigeria, armed conflict, terrorism, and natural disasters leave thousands
+            with newly acquired disabilities. For most, support ends when the emergency does.
+          </p>
+          <p class="reveal" style="font-size:0.95rem; color:var(--text-mid); line-height:1.75; margin-top:1.5rem; max-width:65ch;">
+            People living with physical, sensory, and psychosocial disabilities face compounded barriers:
+            disrupted services, limited healthcare, legal gaps, stigma, and exclusion from economic life.
+            They are overlooked not because they lack potential, but because systems were not built with them in mind.
+          </p>
+          <blockquote class="reveal" style="margin:2rem 0; padding:1.5rem 1.75rem; background:var(--teal-pale); border-radius:4px; border:1px solid var(--border);">
+            <p style="font-family:var(--font-display); font-size:1.15rem; font-style:italic; color:var(--navy); line-height:1.6;">
+              "We see a Nigeria where no one is defined by what happened to them. Where people who acquire disabilities
+              through conflict or disaster are fully supported to rebuild their lives, on their own terms, in their own communities."
+            </p>
+          </blockquote>
+          <p class="reveal" style="font-size:0.95rem; color:var(--text-mid); line-height:1.75; max-width:65ch;">
+            People in our programs gain access to rehabilitation, mental health support, and sustainable livelihood pathways.
+            Everything we do is led by persons with disabilities and grounded in rights, evidence, and local partnerships.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MISSION & VISION -->
-  <section class="section" style="background: var(--cream);">
+  <!-- MISSION & VISION — cream section, split layout -->
+  <section class="section" style="background:var(--cream);" aria-labelledby="mv-heading">
     <div class="section-container">
-      <div style="text-align: center; margin-bottom: 3rem;">
-        <div class="section-label reveal-scale" style="justify-content: center;">Mission & Vision</div>
-        <div class="section-title reveal-scale">What Drives Us Forward</div>
+      <div class="section-header" style="text-align:center; margin-bottom:3rem;">
+        <div class="section-kicker reveal" style="justify-content:center;">Mission &amp; Vision</div>
+        <h2 class="section-title reveal" id="mv-heading">What Drives Us Forward</h2>
       </div>
-      <div class="mv-grid">
-        <div class="mv-card reveal-left">
-          <div class="mv-card-icon" style="background: var(--teal-pale); color: var(--teal);">&#127758;</div>
-          <h3>Our Vision</h3>
-          <p>A Nigeria where no one is defined by what happened to them. Where people who acquire disabilities through conflict or disaster are fully supported to rebuild their lives with dignity, opportunity, and belonging. We envision a society where disability is not a barrier to participation, where every individual has access to the support they need, and where communities embrace inclusion as a strength.</p>
+
+      <div class="about-split reveal">
+        <div style="padding:2.5rem; background:white; border-radius:4px; border:1px solid var(--border);">
+          <div class="section-kicker" style="margin-bottom:1rem;">Our Vision</div>
+          <h3 style="font-family:var(--font-display); font-size:1.7rem; color:var(--navy); margin-bottom:1.25rem; line-height:1.2;">
+            A Nigeria where disability is never a barrier to belonging
+          </h3>
+          <p style="font-size:0.95rem; color:var(--text-mid); line-height:1.75;">
+            We envision a society where people who acquire disabilities through conflict or disaster are fully
+            supported to rebuild their lives with dignity, opportunity, and belonging. Where every individual
+            has access to the support they need, and communities embrace inclusion as a strength.
+          </p>
         </div>
-        <div class="mv-card reveal-right">
-          <div class="mv-card-icon" style="background: rgba(200,168,78,0.1); color: var(--gold);">&#127919;</div>
-          <h3>Our Mission</h3>
-          <p>To walk alongside people as they rebuild, through rehabilitation, mental health and psychosocial support, and sustainable livelihood pathways. We work hand-in-hand with persons with disabilities, local communities, and institutional partners to create lasting change through evidence-based programs and rights-driven advocacy.</p>
+        <div style="padding:2.5rem; background:var(--navy); border-radius:4px;">
+          <div class="section-kicker" style="color:var(--gold); margin-bottom:1rem;">Our Mission</div>
+          <h3 style="font-family:var(--font-display); font-size:1.7rem; color:white; margin-bottom:1.25rem; line-height:1.2;">
+            Walking alongside people as they rebuild
+          </h3>
+          <p style="font-size:0.95rem; color:oklch(99% 0.005 80 / 0.6); line-height:1.75;">
+            Through rehabilitation, mental health and psychosocial support, skills training, and sustainable
+            livelihood pathways. We work hand-in-hand with persons with disabilities, local communities,
+            and institutional partners to create lasting change.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- VALUES -->
-  <section class="section values">
+  <section class="section" aria-labelledby="values-heading">
     <div class="section-container">
-      <div class="values-header reveal-scale">
-        <div class="section-label">Our Values</div>
-        <div class="section-title">The Principles That Guide Us</div>
-        <div class="section-subtitle">Seven core values rooted in human rights, lived experience, and a commitment to lasting change.</div>
+      <div class="section-header">
+        <div class="section-kicker reveal">Our Values</div>
+        <h2 class="section-title reveal" id="values-heading">The Principles That Guide Us</h2>
+        <p class="section-subtitle reveal">Seven core values rooted in human rights, lived experience, and a commitment to lasting change.</p>
       </div>
+
       <div class="values-grid">
-        <div class="value-card reveal">
+        <div class="value-item reveal">
           <div class="value-number">01</div>
-          <h4>Dignity & Rights</h4>
-          <p>We uphold the inherent dignity and rights of every person with a disability, guided by international human rights standards.</p>
+          <h3 class="value-title">Dignity &amp; Rights</h3>
+          <p class="value-desc">We uphold the inherent dignity and rights of every person with a disability, guided by international human rights standards.</p>
         </div>
-        <div class="value-card reveal reveal-delay-1">
+        <div class="value-item reveal">
           <div class="value-number">02</div>
-          <h4>Nothing About Us Without Us</h4>
-          <p>People with lived experience of disability and conflict lead our decisions, programs, and governance.</p>
+          <h3 class="value-title">Nothing About Us Without Us</h3>
+          <p class="value-desc">People with lived experience of disability and conflict lead our decisions, programs, and governance.</p>
         </div>
-        <div class="value-card reveal reveal-delay-2">
+        <div class="value-item reveal">
           <div class="value-number">03</div>
-          <h4>Inclusion in Action</h4>
-          <p>Accessibility and participation are built into everything we do -- programs, partnerships, and workplaces.</p>
+          <h3 class="value-title">Inclusion in Action</h3>
+          <p class="value-desc">Accessibility and participation are built into everything we do: programs, partnerships, and workplaces.</p>
         </div>
-        <div class="value-card reveal reveal-delay-3">
+        <div class="value-item reveal">
           <div class="value-number">04</div>
-          <h4>Do No Harm & Safeguarding</h4>
-          <p>We operate with conflict sensitivity, trauma-informed care, strong safeguarding, and protection-first principles.</p>
+          <h3 class="value-title">Do No Harm</h3>
+          <p class="value-desc">We operate with conflict sensitivity, trauma-informed care, strong safeguarding, and protection-first principles.</p>
         </div>
-        <div class="value-card reveal">
+        <div class="value-item reveal">
           <div class="value-number">05</div>
-          <h4>Accountability & Integrity</h4>
-          <p>We steward resources transparently, measure what matters, and are accountable to communities, partners, and donors.</p>
+          <h3 class="value-title">Accountability &amp; Integrity</h3>
+          <p class="value-desc">We steward resources transparently, measure what matters, and are accountable to communities, partners, and donors.</p>
         </div>
-        <div class="value-card reveal reveal-delay-1">
+        <div class="value-item reveal">
           <div class="value-number">06</div>
-          <h4>Collaboration Over Silos</h4>
-          <p>We work across humanitarian, development, security, and private-sector partners to deliver joined-up solutions.</p>
+          <h3 class="value-title">Collaboration Over Silos</h3>
+          <p class="value-desc">We work across humanitarian, development, security, and private-sector partners to deliver joined-up solutions.</p>
         </div>
-        <div class="value-card reveal reveal-delay-2">
+        <div class="value-item reveal">
           <div class="value-number">07</div>
-          <h4>Local Leadership</h4>
-          <p>We prioritize Nigerian leadership, build local capacity, and design for scale and sustainability.</p>
+          <h3 class="value-title">Local Leadership</h3>
+          <p class="value-desc">We prioritize Nigerian leadership, build local capacity, and design for scale and sustainability.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TARGET GROUPS -->
-  <section class="section target-groups">
+  <!-- WHO WE SERVE -->
+  <section class="section" style="background:var(--cream);" aria-labelledby="serve-heading">
     <div class="section-container">
-      <div class="section-label reveal-left">Who We Serve</div>
-      <div class="section-title reveal-left">Communities at the Intersection of Conflict, Disaster & Disability</div>
-      <div class="section-subtitle reveal-left">Behind every statistic is a person rebuilding their life. These are the communities we serve.</div>
-      <div class="target-grid">
-        <ul class="target-list">
-          <li class="reveal-left">
-            <div class="target-icon">&#127894;</div>
-            <div class="target-text">
-              <h4>Military & Security Personnel</h4>
-              <p>Serving and retired Nigerian military and security personnel living with disabilities acquired in service.</p>
-            </div>
-          </li>
-          <li class="reveal-left reveal-delay-1">
-            <div class="target-icon">&#128101;</div>
-            <div class="target-text">
-              <h4>Civilian Conflict Survivors</h4>
-              <p>Combatants and non-combatants affected by insurgency, banditry, and communal violence.</p>
-            </div>
-          </li>
-          <li class="reveal-left reveal-delay-2">
-            <div class="target-icon">&#127968;</div>
-            <div class="target-text">
-              <h4>Refugees & IDPs</h4>
-              <p>Displaced persons and host-community members living with conflict- or disaster-related disabilities.</p>
-            </div>
-          </li>
-        </ul>
-        <ul class="target-list">
-          <li class="reveal-right reveal-delay-1">
-            <div class="target-icon">&#127754;</div>
-            <div class="target-text">
-              <h4>Disaster Survivors</h4>
-              <p>Survivors of floods, storms, epidemics, and building collapses with newly acquired or aggravated disabilities.</p>
-            </div>
-          </li>
-          <li class="reveal-right reveal-delay-2">
-            <div class="target-icon">&#128148;</div>
-            <div class="target-text">
-              <h4>Victims of Terrorism</h4>
-              <p>Survivors of terrorism, insurgency, and armed banditry who live with lasting physical and psychosocial disabilities.</p>
-            </div>
-          </li>
-          <li class="reveal-right reveal-delay-3">
-            <div class="target-icon">&#9995;</div>
-            <div class="target-text">
-              <h4>Reintegrating Ex-Combatants</h4>
-              <p>Within lawful frameworks, persons with disabilities undergoing formal reintegration processes.</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
+      <div class="section-kicker reveal">Who We Serve</div>
+      <h2 class="section-title reveal" id="serve-heading">Communities at the Intersection of Conflict, Disaster &amp; Disability</h2>
+      <p class="section-subtitle reveal">Behind every statistic is a person rebuilding their life. These are the communities we walk alongside.</p>
 
-  <!-- RIGHTS FRAMEWORK -->
-  <section class="section framework">
-    <div class="section-container">
-      <div class="section-label reveal-left">Rights-Based Approach</div>
-      <div class="section-title reveal-left" style="color: white;">Grounded in International Standards</div>
-      <div class="section-subtitle reveal-left">Our work is aligned with the UN Convention on the Rights of Persons with Disabilities (CRPD) and international humanitarian law.</div>
-      <div class="framework-content">
-        <div class="framework-text reveal-left">
-          <p>IRRI's work is built on a simple truth: disability rights are human rights. We draw on the CRPD's principles of non-discrimination, full participation, accessibility, and respect for inherent dignity.</p>
-          <p>Our approach recognises that disability, conflict, and displacement intersect in ways that multiply disadvantage. Every intervention we design is created with and for persons with disabilities, never imposed upon them.</p>
-          <p>We work to make disability inclusion the norm across humanitarian response, recovery planning, and development programming, not an afterthought.</p>
+      <div class="serve-grid">
+        <div class="reveal" style="padding:2rem; background:white; border-radius:4px; border:1px solid var(--border); display:flex; gap:1.25rem; align-items:flex-start;">
+          <div class="serve-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+          <div>
+            <h3 style="font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:0.4rem;">Military &amp; Security Personnel</h3>
+            <p style="font-size:0.88rem; color:var(--text-mid); line-height:1.65;">Serving and retired Nigerian military and security personnel living with disabilities acquired in service.</p>
+          </div>
         </div>
-        <div class="framework-cards reveal-right">
-          <div class="framework-card">
-            <h4>UN CRPD Alignment</h4>
-            <p>Programs designed around the Convention's core principles of dignity, autonomy, and full participation.</p>
+        <div class="reveal reveal-delay-1" style="padding:2rem; background:white; border-radius:4px; border:1px solid var(--border); display:flex; gap:1.25rem; align-items:flex-start;">
+          <div class="serve-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div>
+            <h3 style="font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:0.4rem;">Civilian Conflict Survivors</h3>
+            <p style="font-size:0.88rem; color:var(--text-mid); line-height:1.65;">Combatants and non-combatants affected by insurgency, banditry, and communal violence.</p>
           </div>
-          <div class="framework-card">
-            <h4>Humanitarian Standards</h4>
-            <p>Guided by the IASC Guidelines on Inclusion of Persons with Disabilities in Humanitarian Action.</p>
+        </div>
+        <div class="reveal reveal-delay-2" style="padding:2rem; background:white; border-radius:4px; border:1px solid var(--border); display:flex; gap:1.25rem; align-items:flex-start;">
+          <div class="serve-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+          <div>
+            <h3 style="font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:0.4rem;">Refugees &amp; IDPs</h3>
+            <p style="font-size:0.88rem; color:var(--text-mid); line-height:1.65;">Displaced persons and host-community members living with conflict- or disaster-related disabilities.</p>
           </div>
-          <div class="framework-card">
-            <h4>Do No Harm Principle</h4>
-            <p>Conflict-sensitive programming with strong safeguarding and protection-first protocols.</p>
+        </div>
+        <div class="reveal reveal-delay-3" style="padding:2rem; background:white; border-radius:4px; border:1px solid var(--border); display:flex; gap:1.25rem; align-items:flex-start;">
+          <div class="serve-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+          <div>
+            <h3 style="font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:0.4rem;">Disaster Survivors</h3>
+            <p style="font-size:0.88rem; color:var(--text-mid); line-height:1.65;">Survivors of floods, storms, epidemics, and building collapses with newly acquired disabilities.</p>
           </div>
-          <div class="framework-card">
-            <h4>Localization</h4>
-            <p>Nigerian-led, community-driven approaches that build local capacity and ensure sustainability.</p>
+        </div>
+        <div class="reveal" style="padding:2rem; background:white; border-radius:4px; border:1px solid var(--border); display:flex; gap:1.25rem; align-items:flex-start;">
+          <div class="serve-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+          <div>
+            <h3 style="font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:0.4rem;">Victims of Terrorism</h3>
+            <p style="font-size:0.88rem; color:var(--text-mid); line-height:1.65;">Survivors of terrorism, insurgency, and armed banditry with lasting physical and psychosocial disabilities.</p>
+          </div>
+        </div>
+        <div class="reveal reveal-delay-1" style="padding:2rem; background:white; border-radius:4px; border:1px solid var(--border); display:flex; gap:1.25rem; align-items:flex-start;">
+          <div class="serve-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg></div>
+          <div>
+            <h3 style="font-size:1rem; font-weight:600; color:var(--navy); margin-bottom:0.4rem;">Reintegrating Ex-Combatants</h3>
+            <p style="font-size:0.88rem; color:var(--text-mid); line-height:1.65;">Within lawful frameworks, persons with disabilities undergoing formal reintegration processes.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section cta-section">
-    <div class="section-container">
-      <div class="cta-inner reveal-scale">
-        <div class="section-label">Get Involved</div>
-        <div class="section-title">Join Us in Rebuilding Futures</div>
-        <div class="section-subtitle">Whether as a donor, partner, or volunteer -- your support helps restore dignity and opportunity for those most often left behind.</div>
-        <div class="cta-buttons">
-          <a href="contact.html" class="btn-primary-dark">Partner With Us</a>
-          <a href="contact.html" class="btn-outline">Get In Touch</a>
+  <!-- RIGHTS FRAMEWORK — navy section -->
+  <section class="stats-section" aria-labelledby="framework-heading">
+    <div style="max-width:1100px; margin:0 auto; position:relative; z-index:1;">
+      <div class="section-kicker reveal" style="color:var(--gold-light);">Rights-Based Approach</div>
+      <h2 class="section-title reveal" id="framework-heading" style="color:white; margin-bottom:0.75rem;">Grounded in International Standards</h2>
+      <p class="section-subtitle reveal" style="color:oklch(99% 0.005 80 / 0.55); margin-bottom:3rem;">
+        Our work is aligned with the UN Convention on the Rights of Persons with Disabilities (CRPD)
+        and international humanitarian law.
+      </p>
+
+      <div class="framework-split">
+        <div class="reveal">
+          <p style="font-size:0.95rem; color:oklch(99% 0.005 80 / 0.6); line-height:1.8; margin-bottom:1.25rem;">
+            IRRI's work is built on a simple truth: disability rights are human rights. We draw on the CRPD's
+            principles of non-discrimination, full participation, accessibility, and respect for inherent dignity.
+          </p>
+          <p style="font-size:0.95rem; color:oklch(99% 0.005 80 / 0.6); line-height:1.8; margin-bottom:1.25rem;">
+            Our approach recognises that disability, conflict, and displacement intersect in ways that multiply
+            disadvantage. Every intervention we design is created with and for persons with disabilities, never
+            imposed upon them.
+          </p>
+          <p style="font-size:0.95rem; color:oklch(99% 0.005 80 / 0.6); line-height:1.8;">
+            We work to make disability inclusion the norm across humanitarian response, recovery planning, and
+            development programming, not an afterthought.
+          </p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:1rem;">
+          <div class="reveal" style="padding:1.5rem; background:oklch(99% 0.005 80 / 0.05); border:1px solid oklch(99% 0.005 80 / 0.1); border-radius:4px;">
+            <h3 style="font-size:0.95rem; font-weight:600; color:white; margin-bottom:0.4rem;">UN CRPD Alignment</h3>
+            <p style="font-size:0.85rem; color:oklch(99% 0.005 80 / 0.5); line-height:1.6;">Programs designed around the Convention's core principles of dignity, autonomy, and full participation.</p>
+          </div>
+          <div class="reveal reveal-delay-1" style="padding:1.5rem; background:oklch(99% 0.005 80 / 0.05); border:1px solid oklch(99% 0.005 80 / 0.1); border-radius:4px;">
+            <h3 style="font-size:0.95rem; font-weight:600; color:white; margin-bottom:0.4rem;">Humanitarian Standards</h3>
+            <p style="font-size:0.85rem; color:oklch(99% 0.005 80 / 0.5); line-height:1.6;">Guided by the IASC Guidelines on Inclusion of Persons with Disabilities in Humanitarian Action.</p>
+          </div>
+          <div class="reveal reveal-delay-2" style="padding:1.5rem; background:oklch(99% 0.005 80 / 0.05); border:1px solid oklch(99% 0.005 80 / 0.1); border-radius:4px;">
+            <h3 style="font-size:0.95rem; font-weight:600; color:white; margin-bottom:0.4rem;">Do No Harm Principle</h3>
+            <p style="font-size:0.85rem; color:oklch(99% 0.005 80 / 0.5); line-height:1.6;">Conflict-sensitive programming with strong safeguarding and protection-first protocols.</p>
+          </div>
+          <div class="reveal reveal-delay-3" style="padding:1.5rem; background:oklch(99% 0.005 80 / 0.05); border:1px solid oklch(99% 0.005 80 / 0.1); border-radius:4px;">
+            <h3 style="font-size:0.95rem; font-weight:600; color:white; margin-bottom:0.4rem;">Localization</h3>
+            <p style="font-size:0.85rem; color:oklch(99% 0.005 80 / 0.5); line-height:1.6;">Nigerian-led, community-driven approaches that build local capacity and ensure sustainability.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- CTA BAND -->
+  <div class="cta-band" aria-labelledby="cta-heading">
+    <div class="cta-band-inner reveal">
+      <h2 id="cta-heading">Join Us in Rebuilding Futures</h2>
+      <p>Whether as a donor, partner, or volunteer, your support helps restore dignity and opportunity for those most often left behind.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+        <a href="contact.html" class="btn btn-gold">
+          Partner With Us
+          <svg class="btn-arrow" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <a href="contact.html" class="btn btn-secondary" style="border-color:oklch(99% 0.005 80 / 0.35);">Get In Touch</a>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
-  <footer class="footer">
+  <footer class="footer" aria-label="Site footer">
     <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="nav-logo-text">
-          IRRI
-          <span>Inclusive Rehabilitation & Reintegration Initiative</span>
+      <div class="footer-top">
+        <div>
+          <img src="logo-nav.png" alt="IRRI" class="footer-brand-logo" width="44" height="44">
+          <p class="footer-brand-desc">Reclaiming Dignity. Rebuilding Futures.<br>Nigeria &bull; Aligned with UN CRPD</p>
         </div>
-        <p>Reclaiming Dignity. Rebuilding Futures.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Nigeria &bull; Aligned with UN CRPD</p>
+        <div>
+          <h3 class="footer-col-title">Programs</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="programs.html">Rehabilitation &amp; MHPSS</a></li>
+            <li><a href="programs.html">Rehab-to-Work</a></li>
+            <li><a href="programs.html">Legal Navigation</a></li>
+            <li><a href="programs.html">Peacebuilding</a></li>
+            <li><a href="programs.html">Humanitarian Inclusion</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">About</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="about.html">Our Mission</a></li>
+            <li><a href="about.html">Core Values</a></li>
+            <li><a href="programs.html#pilot">Pilot Project</a></li>
+            <li><a href="about.html">Partners</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer-col-title">Connect</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="mailto:info@irriinitiative.org">info@irriinitiative.org</a></li>
+            <li><a href="contact.html">Get Involved</a></li>
+            <li><a href="contact.html">Donate</a></li>
+            <li><a href="blog.html">News &amp; Updates</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h5>Programs</h5>
-        <ul class="footer-links">
-          <li><a href="programs.html">Rehabilitation & MHPSS</a></li>
-          <li><a href="programs.html">Rehab-to-Work</a></li>
-          <li><a href="programs.html">Legal Navigation</a></li>
-          <li><a href="programs.html">Peacebuilding</a></li>
-          <li><a href="programs.html">Humanitarian Inclusion</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>About</h5>
-        <ul class="footer-links">
-          <li><a href="about.html">Our Mission</a></li>
-          <li><a href="about.html">Core Values</a></li>
-          <li><a href="programs.html#pilot">Pilot Project</a></li>
-          <li><a href="about.html">Partners</a></li>
-        </ul>
-      </div>
-      <div>
-        <h5>Connect</h5>
-        <ul class="footer-links">
-          <li><a href="mailto:info@irriinitiative.org">Email Us</a></li>
-          <li><a href="contact.html">Get Involved</a></li>
-          <li><a href="contact.html">Donate</a></li>
-          <li><a href="blog.html">News & Updates</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 IRRI - Inclusive Rehabilitation & Reintegration Initiative. All rights reserved.</p>
-      <div class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms</a>
+      <div class="footer-bottom">
+        <p class="footer-legal">&copy; 2026 IRRI &mdash; Inclusive Rehabilitation &amp; Reintegration Initiative. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#" style="margin-right:1.25rem;">Privacy Policy</a>
+          <a href="#">Terms</a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <script>
-    // Navbar scroll effect (throttled with rAF)
-    const nav = document.getElementById('nav');
-    let ticking = false;
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          nav.classList.toggle('scrolled', window.scrollY > 50);
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
+  <script type="module" src="animations.js"></script>
 
-    // Mobile menu toggle
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navLinks = document.getElementById('navLinks');
-    mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => navLinks.classList.remove('open'));
-    });
-
-    // Scroll reveal
-    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-    revealElements.forEach(el => observer.observe(el));
-  </script>
-</div>
 </body>
 </html>
