@@ -44,8 +44,13 @@ def body(slide, items, top=1.5, left=0.6, width=12.1, height=5.5, size=16):
         p.level = level
         r = p.add_run(); r.text = text
         r.font.size = Pt(size - level * 1)
+        is_assumption = text.lstrip().lower().startswith("assumption")
         r.font.bold = bold
-        r.font.color.rgb = NAVY if bold and level == 0 else GREY
+        if is_assumption:
+            r.font.italic = True
+            r.font.color.rgb = ACCENT
+        else:
+            r.font.color.rgb = NAVY if bold and level == 0 else GREY
         p.space_after = Pt(6)
     return slide
 
@@ -124,16 +129,16 @@ issue_slide("R4 — Fragmented, poorly integrated systems",
 # Symptoms summary slide
 s = add_slide(); title_box(s, "Symptoms — what these root causes produce")
 body(s, [
-    (0, "S1  Protracted payables", True),
-    (1, "Late-payment penalties, strained supplier relationships, lost early-payment discounts, working-capital drag.", False),
-    (0, "S2  Lost economies of scale", True),
-    (1, "Fragmented spend = higher prices, duplicate contracts, no volume discounts.", False),
-    (0, "S3  Catalogue proliferation & tail spend", True),
-    (1, "Too many catalogue items; low-value items require multiple orders to different suppliers — costly at 1.8M txns/day.", False),
-    (0, "S4  Resourcing imbalance", True),
+    (0, "S1  Protracted payables (stated in the analysis)", True),
+    (1, "Assumption: this drives late-payment penalties, strained supplier relationships and lost early-payment discounts.", False),
+    (0, "S2  Lost economies of scale (stated)", True),
+    (1, "Assumption: fragmented spend means higher unit prices, duplicate contracts and no volume discounts.", False),
+    (0, "S3  Catalogue proliferation & tail spend (stated)", True),
+    (1, "Low-value items require multiple orders to different suppliers — costly at 1.8M txns/day.", False),
+    (0, "S4  Resourcing imbalance (stated)", True),
     (1, "Team 1: 2 FTE + part-timers + 2 vacancies (slow).  Team 2: 7 + 2 seniors (fast). Inconsistent service.", False),
-    (0, "S5  Low morale / perception", True),
-    (1, "Procurement seen as low-value back-office work — attrition risk and change fatigue.", False),
+    (0, "S5  Low morale / perception (stated)", True),
+    (1, "Assumption: this creates attrition risk and change fatigue.", False),
 ], top=1.4, size=15)
 
 # Most important
@@ -146,24 +151,26 @@ body(s, [
 ], top=1.6, size=18)
 
 # ===== SECTION 2 =====
-s = add_slide(); title_box(s, "2.  Prioritisation", "What to work on, and why")
+s = add_slide(); title_box(s, "2.  Prioritisation", "Three high-impact moves first — not a full redesign")
 body(s, [
-    (0, "Priority order:", True),
-    (1, "1.  R1 — Executive sponsorship & governance  (quick, foundational enabler)", True),
-    (1, "2.  R3 + S3 — Standardise procure-to-pay & rationalise catalogue / tail spend  (biggest near-term efficiency win at 1.8M txns/day)", True),
-    (1, "3.  S4 — Rebalance resourcing (fill Team 1 vacancies / shift work)  (fast operational win)", True),
-    (0, "Why this order:", True),
-    (1, "Governance is the enabler; process + catalogue standardisation delivers the biggest near-term gain without a multi-year system rebuild; system replacement is highest cost/risk so it comes later, de-risked by the earlier steps.", False),
-], top=1.4, size=16)
+    (0, "We deliberately focus on a few high-impact, low-disruption actions rather than a multi-year transformation:", False),
+    (1, "1.  R1 — Secure executive sponsorship & a compliance mandate", True),
+    (2, "Low cost, fast, and unlocks every other fix. Highest leverage move available.", False),
+    (1, "2.  R3 + S3 — Standardise the procure-to-pay process & rationalise catalogue / tail spend", True),
+    (2, "Biggest near-term efficiency gain at 1.8M txns/day — achievable WITHOUT replacing systems.", False),
+    (1, "3.  S4 — Rebalance the two central teams (fill Team 1 vacancies / shift workload)", True),
+    (2, "Fast operational win that lifts throughput and morale.", False),
+    (0, "Assumption: these three deliver most of the benefit; bigger structural changes are deferred until data justifies them.", False),
+], top=1.4, size=15)
 
-s = add_slide(); title_box(s, "Long-term focus (related issues)")
+s = add_slide(); title_box(s, "Longer-term — only if the data justifies it")
 body(s, [
-    (0, "R4 — ERP / system consolidation onto a common platform", True),
-    (0, "R2 — Integrate the 59 units into one operating model", True),
-    (0, "S2 — Supplier-base rationalisation to rebuild economies of scale", True),
-    (0, "Establish a shared-services / procurement centre of excellence", True),
-    (0, "Address S5 — reposition procurement as a value-adding function to lift morale and retention", True),
-], top=1.6, size=18)
+    (0, "These are higher cost / higher risk, so treat as later-stage options, not day-one commitments:", False),
+    (1, "R4 — Consolidate / better integrate the ERPs (Oracle, SAP, PeopleSoft)", True),
+    (1, "S2 — Rationalise the supplier base to rebuild buying leverage", True),
+    (1, "R2 — Move the 59 units toward one operating model / shared services", True),
+    (0, "Assumption: a full ERP consolidation is NOT assumed to be the right answer yet — it should be a business case decided on spend, cost-to-serve and lock-in data.", False),
+], top=1.5, size=16)
 
 s = add_slide(); title_box(s, "Risks, dependencies & organisational factors")
 body(s, [
@@ -183,8 +190,18 @@ body(s, [
     (0, "Cost of running the three ERPs (licences + support)", False),
     (0, "Share of the 1.8M daily transactions that is low-value/tail vs strategic, and cost-to-process per order", False),
     (0, "Number of catalogue items and contracts; contractual lock-ins", False),
-    (0, "Budget, timeline and genuine executive appetite for transformation", False),
+    (0, "Budget, timeline and genuine executive appetite for change", False),
 ], top=1.5, size=17)
+
+s = add_slide(); title_box(s, "Assumptions we have made", "To be confirmed with the client")
+body(s, [
+    (0, "Assumption: protracted payables are causing real cost (penalties, lost discounts) — not yet quantified.", False),
+    (0, "Assumption: fragmented spend is losing meaningful volume discounts across the 59 units.", False),
+    (0, "Assumption: a large share of the 1.8M daily transactions is low-value/tail spend that can be consolidated.", False),
+    (0, "Assumption: executive sponsorship is currently absent rather than present-but-ignored.", False),
+    (0, "Assumption: the three named ERPs are the main systems; there may be more across 59 units.", False),
+    (0, "Assumption: standardising process and catalogue delivers most of the benefit before any system replacement.", False),
+], top=1.5, size=16)
 
 # ===== SECTION 3 =====
 s = add_slide(); title_box(s, "3.  Five questions for the client", "To better inform our work")
