@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Draft deck: Next Tech procurement issue analysis (tight ~12-slide version)."""
+"""Draft deck: Next Tech procurement issue analysis (~12 slides, plain human wording)."""
 from pptx import Presentation
 from pptx.util import Inches, Pt
 from pptx.dml.color import RGBColor
@@ -59,173 +59,140 @@ s = add_slide()
 tb = s.shapes.add_textbox(Inches(0.8), Inches(2.5), Inches(11.7), Inches(2.6))
 tf = tb.text_frame; tf.word_wrap = True
 p = tf.paragraphs[0]; r = p.add_run()
-r.text = "Procurement Problem Analysis & Prioritisation"
+r.text = "Procurement Problem Analysis and Prioritisation"
 r.font.size = Pt(34); r.font.bold = True; r.font.color.rgb = NAVY
 p2 = tf.add_paragraph(); r2 = p2.add_run()
-r2.text = "Client: Multinational Semiconductor Major  |  Manager's internal review"
+r2.text = "Client: a multinational semiconductor major  |  Manager's internal review"
 r2.font.size = Pt(17); r2.font.color.rgb = GREY
 p3 = tf.add_paragraph(); r3 = p3.add_run()
-r3.text = "1. The issues, evidence & impact   2. Prioritisation   3. Questions for the client"
+r3.text = "1. The issues, evidence and impact     2. What to prioritise     3. Questions for the client"
 r3.font.size = Pt(15); r3.font.italic = True; r3.font.color.rgb = ACCENT
 
 # ---- 2. Context ----
-s = add_slide(); title_box(s, "Context: one company running as 59")
+s = add_slide(); title_box(s, "The situation: one company running as 59")
 body(s, [
-    (0, "A multinational semiconductor major grew through M&A but never integrated the acquired businesses.", True),
-    (0, "59 operating locations run as independent organisations, each with its own procurement processes, supplier community and back-end systems (Oracle, SAP, PeopleSoft).", False),
-    (0, "Two central procurement teams are accountable for end-to-end process across all 59 locations.", False),
-    (0, "Scale: ~1.8 million procurement transactions every day — so every inefficiency is multiplied massively.", True),
-    (0, "A manager's internal analysis surfaced the issues that follow.", False),
+    (0, "This is really one problem, not 59. The company grew through acquisitions but never brought those businesses together.", True),
+    (0, "All 59 sites still run as separate organisations, each with its own procurement, supplier base and back-end systems (Oracle, SAP and PeopleSoft).", False),
+    (0, "Two central teams are meant to cover procurement across every site.", False),
+    (0, "The company handles about 1.8 million procurement transactions a day, so even a small inefficiency adds up fast.", True),
+    (0, "Everything here comes from the manager's own internal analysis.", False),
 ], top=1.5, size=17)
 
 # ---- 3. Issues: root causes ----
-s = add_slide(); title_box(s, "1. The issues — root causes (the drivers)", "Problem | evidence | business impact")
+s = add_slide(); title_box(s, "1. The issues: root causes (the real drivers)", "Problem, evidence and business impact")
 body(s, [
-    (0, "R1  No executive sponsorship to enforce compliance", True),
-    (1, "Teams are accountable but have no mandate; 'control of all 59 is a huge challenge' -> nothing can be standardised. The keystone issue.", False),
-    (0, "R2  59 independent units from M&A, never integrated", True),
-    (1, "Own processes, suppliers and systems -> duplication, no single source of truth, no buying leverage.", False),
-    (0, "R3  No standardised process design", True),
-    (1, "Staff upskilled to process invoices many different ways -> errors, slow cycles, no end-to-end visibility.", False),
-    (0, "R4  Fragmented, poorly integrated systems (Oracle / SAP / PeopleSoft)", True),
-    (1, "'Not well integrated', 'a lot of manual processes' -> rework, high IT/training cost, no consolidated spend data.", False),
+    (0, "R1  No executive backing to enforce a common way of working", True),
+    (1, "The central teams are responsible for the process but have no authority to make 59 independent sites follow it, so nothing gets standardised. This is the one that holds everything else back.", False),
+    (0, "R2  59 separate units from M&A that were never joined up", True),
+    (1, "Each has its own processes, suppliers and systems, which means duplication, no single view of spend and no buying power.", False),
+    (0, "R3  No standard process", True),
+    (1, "Staff are trained to process invoices in lots of different ways, which causes errors, slow cycles and poor visibility.", False),
+    (0, "R4  Systems that barely talk to each other", True),
+    (1, "Three ERPs (Oracle, SAP, PeopleSoft) are poorly connected, so people fall back on manual workarounds and there is no joined-up spend data.", False),
 ], top=1.5, size=16)
 
 # ---- 4. Issues: symptoms ----
-s = add_slide(); title_box(s, "1. The issues — symptoms (what hurts day to day)")
+s = add_slide(); title_box(s, "1. The issues: what it costs day to day")
 body(s, [
-    (0, "S1  Protracted payables (stated)", True),
-    (1, "Assumption: drives late-payment penalties, lost early-payment discounts and strained supplier relationships.", False),
-    (0, "S2  Lost economies of scale (stated)", True),
-    (1, "Fragmented spend -> higher prices and duplicate contracts (see supplier evidence next).", False),
-    (0, "S3  Catalogue proliferation & tail spend (stated)", True),
-    (1, "Low-value items need multiple orders to different suppliers — costly at 1.8M txns/day.", False),
-    (0, "S4  Resourcing imbalance (stated)", True),
-    (1, "Team 1: 2 FTE + part-timers + 2 vacancies (slow).  Team 2: 7 + 2 seniors (fast).", False),
-    (0, "S5  Low morale — procurement seen as low-value back-office work (stated)", True),
-    (1, "Assumption: creates attrition risk and change fatigue.", False),
+    (0, "S1  Slow payments to suppliers (from the analysis)", True),
+    (1, "Assumption: this likely brings late-payment charges, missed early-payment discounts and frustrated suppliers.", False),
+    (0, "S2  Loss of buying power (from the analysis)", True),
+    (1, "Spread across so many suppliers, the company pays more and ends up with duplicate contracts (see the next slide).", False),
+    (0, "S3  Too many catalogue items and small purchases (from the analysis)", True),
+    (1, "A single low-value item can mean several separate orders to different suppliers, which is expensive at 1.8 million transactions a day.", False),
+    (0, "S4  Uneven teams (from the analysis)", True),
+    (1, "Team 1 has 2 full-timers plus part-timers and 2 open roles, and is slow. Team 2 has 7 people plus 2 seniors and is much quicker.", False),
+    (0, "S5  Low morale, with procurement seen as low-value admin (from the analysis)", True),
+    (1, "Assumption: this risks people leaving and makes change harder.", False),
 ], top=1.4, size=15)
 
-# ---- 5. Evidence spotlight: supplier trend ----
-s = add_slide(); title_box(s, "Evidence: the supplier base is fragmenting, not consolidating")
+# ---- 5. Evidence spotlight ----
+s = add_slide(); title_box(s, "Evidence: the supplier base is growing, not consolidating")
 body(s, [
-    (0, "2023:  224 suppliers  |  $900M spend", True),
-    (0, "2024:  264 suppliers  |  $1,045M spend", True),
-    (1, "Suppliers +40 (+18%); spend +$145M (+16%).", False),
-    (1, "Average spend per supplier FELL: $4.02M -> $3.96M.", False),
-    (0, "So spend is rising but buying leverage per supplier is falling — adding suppliers faster than consolidating them.", True),
-    (1, "Direct evidence for S2 (lost economies of scale) and R2 (fragmented, un-integrated units).", False),
-    (0, "Assumption: figures are group-wide; a per-unit / per-category split would size the consolidation opportunity.", False),
+    (0, "2023:  224 suppliers,  $900M spend", True),
+    (0, "2024:  264 suppliers,  $1,045M spend", True),
+    (1, "That is 40 more suppliers (up 18%) and $145M more spend (up 16%).", False),
+    (1, "But the average spend per supplier fell, from $4.02M to $3.96M.", False),
+    (0, "So spend is rising while it is being spread across more suppliers, which is the opposite of building buying power.", True),
+    (1, "This backs up the loss of buying power and the fact the units were never joined up.", False),
+    (0, "Assumption: these look like group totals, so a breakdown by site or category would show where the opportunity sits.", False),
 ], top=1.5, size=16)
 
 # ---- 6. Most important ----
-s = add_slide(); title_box(s, "Which issue matters most?", "Our view")
+s = add_slide(); title_box(s, "The issue I think matters most", "My view")
 body(s, [
-    (0, "Most important = R1: secure executive sponsorship and a compliance mandate.", True),
-    (1, "Not the most expensive problem, but the dependency that unblocks everything else.", False),
-    (1, "With 59 autonomous units, you cannot standardise processes, consolidate systems or rationalise suppliers unless leadership mandates it.", False),
-    (1, "Business impact: without it, spend and the supplier base keep fragmenting (as 2023->2024 shows). Low cost, high leverage — fix it first.", False),
+    (0, "For me it is R1, the lack of executive backing.", True),
+    (1, "It is not the costliest problem, but it is the one that has to be solved before any of the others can move.", False),
+    (1, "Across 59 independent sites you cannot standardise processes, bring systems together or tidy up suppliers unless leadership requires it.", False),
+    (1, "If it is left alone, spend and the supplier base just keep spreading, which is exactly what the 2023 to 2024 figures show. It is cheap to fix and it makes everything else possible.", False),
 ], top=1.7, size=18)
 
 # ---- 7. Prioritisation ----
-s = add_slide(); title_box(s, "2. Prioritisation — three high-impact moves", "Prioritised issue and why — not a full redesign")
+s = add_slide(); title_box(s, "2. What I would prioritise: three moves that matter most", "The priorities and the reasoning, not a full rebuild")
 body(s, [
-    (1, "1.  R1 — Secure executive sponsorship & a compliance mandate", True),
-    (2, "Low cost, fast, unlocks every other fix. Highest leverage move available.", False),
-    (1, "2.  R3 + S3 — Standardise procure-to-pay & rationalise catalogue / tail spend", True),
-    (2, "Biggest near-term efficiency gain at 1.8M txns/day — achievable WITHOUT replacing systems.", False),
-    (1, "3.  S4 — Rebalance the two central teams (fill Team 1 vacancies / shift workload)", True),
-    (2, "Fast operational win that lifts throughput and morale.", False),
-    (0, "Assumption: these three deliver most of the benefit; structural changes are deferred until data justifies them.", False),
+    (1, "1.  Get executive backing and a clear requirement to comply", True),
+    (2, "Quick, low cost, and it makes everything else possible.", False),
+    (1, "2.  Agree one standard procure-to-pay process and tidy up the catalogue and small-value spend", True),
+    (2, "The biggest near-term gain at 1.8 million transactions a day, and it does not need new systems.", False),
+    (1, "3.  Even out the two teams by filling Team 1's open roles or moving work across", True),
+    (2, "A quick win that also helps morale.", False),
+    (0, "Assumption: these three give most of the benefit, so bigger changes can wait until the data backs them.", False),
 ], top=1.5, size=16)
 
 # ---- 8. Long-term / related issues ----
-s = add_slide(); title_box(s, "Related issues — longer-term focus", "Higher cost / risk: later-stage, data-led decisions")
+s = add_slide(); title_box(s, "Related issues to come back to later", "Bigger, costlier changes that should be led by data")
 body(s, [
-    (0, "R4 — Consolidate / better integrate the ERPs (Oracle, SAP, PeopleSoft)", True),
-    (0, "S2 — Rationalise the supplier base to rebuild buying leverage", True),
-    (0, "R2 — Move the 59 units toward one operating model / shared services", True),
-    (0, "Assumption: a full ERP consolidation is NOT assumed to be the right answer yet — it should be a business case decided on spend, cost-to-serve and lock-in data.", False),
+    (0, "Bringing the ERPs (Oracle, SAP, PeopleSoft) together, or at least connecting them properly.", True),
+    (0, "Tidying up the supplier base to rebuild buying power.", True),
+    (0, "Moving the 59 sites towards one way of working, or a shared service.", True),
+    (0, "Assumption: I am not assuming a full system merge is the right answer yet. That is a big call and should be based on spend, running costs and contract lock-ins.", False),
 ], top=1.6, size=17)
 
-# ---- 9. Organisational factors that make this a priority ----
-s = add_slide(); title_box(s, "Why this is a priority — organisational factors", "People · Process · Governance · Systems")
+# ---- 9. Organisational factors ----
+s = add_slide(); title_box(s, "Why this is a priority across the business", "People, process, governance and systems")
 body(s, [
     (0, "People", True),
-    (1, "Imbalanced teams (Team 1 understaffed, 2 vacancies, part-timers) + low morale + 'low-value' perception = limited capacity and appetite to deliver change.", False),
+    (1, "The teams are uneven, morale is low and procurement is seen as low value, so there is limited capacity and appetite for change.", False),
     (0, "Process", True),
-    (1, "No standard P2P, manual processes, catalogue proliferation, multiple orders for low-value items — inefficiency scales to 1.8M txns/day.", False),
+    (1, "No standard process, a lot of manual work and too many catalogue items, all multiplied across 1.8 million transactions a day.", False),
     (0, "Governance", True),
-    (1, "No executive mandate; teams accountable but cannot enforce compliance across 59 units — this is what elevates everything to a priority.", False),
+    (1, "No executive requirement to comply, which is what turns these problems into a real priority.", False),
     (0, "Systems", True),
-    (1, "Three poorly integrated ERPs (Oracle/SAP/PeopleSoft) -> manual rework, no consolidated spend data, high IT/training cost.", False),
+    (1, "Three poorly connected ERPs and no single view of spend.", False),
 ], top=1.4, size=15)
 
 # ---- 10. Risks / constraints / dependencies ----
-s = add_slide(); title_box(s, "Key risks, constraints & dependencies affecting prioritisation")
+s = add_slide(); title_box(s, "Risks, constraints and dependencies that affect the priorities")
 body(s, [
-    (0, "Dependency: executive sponsorship is the gating dependency — the plan stalls without it.", True),
-    (0, "Constraint: 59 autonomous units will resist giving up control (cultural).", False),
-    (0, "Constraint: multinational tax / statutory / regulatory rules limit a single standard.", False),
-    (0, "Constraint: thin Team 1 capacity + low morale limit bandwidth to absorb change.", False),
-    (0, "Risk: ERP consolidation carries cost, business-continuity and data-migration risk.", False),
-    (0, "Risk: ongoing M&A may keep re-introducing fragmentation; contractual lock-ins on systems/suppliers.", False),
+    (0, "The big dependency is executive backing. Without it the whole plan stalls.", True),
+    (0, "The 59 sites are used to running themselves, so expect pushback on giving up control.", False),
+    (0, "As a global business, local tax and legal rules limit how far one standard can go.", False),
+    (0, "Team 1 is stretched thin, so there is little spare capacity to take on change.", False),
+    (0, "Bringing the ERPs together would be costly and carries a real risk to day-to-day operations.", False),
+    (0, "More acquisitions could keep adding to the problem, and some systems or suppliers may be locked into contracts.", False),
 ], top=1.5, size=16)
 
-# ---- 10. Info needed ----
-s = add_slide(); title_box(s, "Information needed before confirming priorities")
+# ---- 11. Info needed ----
+s = add_slide(); title_box(s, "What I would want to know before confirming the priorities")
 body(s, [
-    (0, "Spend by unit / category / supplier, and supplier overlap across units.", False),
-    (0, "Invoice volumes, cycle times, late-payment penalties and maverick-spend rates.", False),
-    (0, "Cost of running the three ERPs (licences + support).", False),
-    (0, "Share of the 1.8M daily transactions that is low-value/tail vs strategic, and cost-to-process per order.", False),
-    (0, "Number of catalogue items and contracts; contractual lock-ins.", False),
-    (0, "Budget, timeline and genuine executive appetite for change.", False),
+    (0, "Spend by site, category and supplier, and how much supplier overlap there is.", False),
+    (0, "Invoice volumes, how long payments take, and any late-payment charges.", False),
+    (0, "What it costs to run the three ERPs.", False),
+    (0, "How much of the 1.8 million daily transactions is small-value, and what one order costs to process.", False),
+    (0, "How many catalogue items and contracts there are, and which are locked in.", False),
+    (0, "The budget, the timeline, and whether leadership is genuinely willing to change.", False),
 ], top=1.5, size=17)
 
-# ---- 11. Five questions ----
-s = add_slide(); title_box(s, "3. Five questions for the client", "To better inform our work")
+# ---- 12. Five questions ----
+s = add_slide(); title_box(s, "3. Five questions for the client", "To help us get this right")
 body(s, [
-    (0, "1.  Spend & suppliers — total spend, split across the 59 units, and how much supplier overlap exists between them?", True),
-    (0, "2.  Governance — is there executive appetite to mandate a single, compliant operating model, and who would sponsor it?", True),
-    (0, "3.  Transaction mix — of the 1.8M daily transactions, what share is low-value/tail, and what does one order cost to process today?", True),
-    (0, "4.  Systems — is ERP consolidation on the table, what lock-ins exist, and is the target shared services or continued unit autonomy?", True),
-    (0, "5.  People — what's driving low morale, are Team 1's vacancies funded, and can resource move between the two teams?", True),
+    (0, "1.  Spend and suppliers: what is the total spend, how does it split across the 59 sites, and how much supplier overlap is there?", True),
+    (0, "2.  Governance: is leadership willing to require one common way of working, and who would own it?", True),
+    (0, "3.  Transactions: how much of the 1.8 million a day is small-value spend, and what does it cost to process one order today?", True),
+    (0, "4.  Systems: is bringing the ERPs together on the table, what is locked in by contract, and is the goal a shared service or keeping sites independent?", True),
+    (0, "5.  People: what is behind the low morale, are Team 1's open roles funded, and can people move between the two teams?", True),
 ], top=1.4, size=15)
 
 out = "/home/user/-irri-website/NextTech_Procurement_Analysis.pptx"
-
-# ---- Speaker notes (script) ----
-SCRIPT = [
- # 1 Title
- "Thanks everyone. Over the next few minutes I'll walk through three things: first the procurement issues we've identified and the impact they're having; second what we'd prioritise and why; and third the questions we'd put back to the client. I'll flag where we've made assumptions, because some of this needs data to confirm.",
- # 2 Context
- "The key thing to understand is that this isn't really 59 separate problems — it's one. The company grew by acquisition but never integrated those businesses, so today 59 sites run as independent organisations, each with their own processes, suppliers and back-end systems. Two central teams are accountable across all of them. And the scale matters: at roughly 1.8 million transactions a day, even a tiny inefficiency per transaction becomes enormous. Everything that follows comes from the manager's own internal analysis.",
- # 3 Root causes
- "We've separated the findings into root causes — the drivers — and symptoms, because you fix the drivers, not the symptoms. There are four root causes. R1, and the most important, is that there's no executive mandate: the central teams are accountable but can't actually enforce compliance across 59 autonomous units. R2 is the fragmented operating model from M&A. R3 is that there's no standard process — staff are upskilled to invoice in lots of different ways. And R4 is the systems: three ERPs, Oracle, SAP and PeopleSoft, poorly integrated, forcing a lot of manual work.",
- # 4 Symptoms
- "Those root causes produce five symptoms. Protracted payables — slow invoice processing. Lost economies of scale. Catalogue proliferation and tail spend, where a single low-value item needs multiple orders to different suppliers. The resourcing imbalance between the two teams — Team 1 is understaffed with two vacancies and part-timers while Team 2 is much stronger. And low morale, because procurement is seen as low-value back-office work. I'd flag that the cost of late payments and the morale-driven attrition are assumptions at this stage — sensible, but not yet quantified.",
- # 5 Evidence
- "This is the strongest piece of evidence. Between 2023 and 2024 the supplier count went up 18%, from 224 to 264, and spend rose 16% to just over a billion. But average spend per supplier actually fell. So as the business grows it's adding suppliers faster than it's consolidating them — it's fragmenting, not concentrating. That's direct evidence for the lost economies of scale and the un-integrated operating model. The assumption is that these are group-wide numbers; a per-unit split would let us size the opportunity precisely.",
- # 6 Most important
- "If I had to pick the single most important issue, it's R1 — the lack of an executive mandate. It's not the most expensive problem to fix, but it's the dependency that unblocks everything else. You simply can't standardise processes, consolidate systems or rationalise suppliers across 59 autonomous units unless leadership mandates it. And the business impact of not fixing it is exactly what that supplier chart shows — continued fragmentation. Low cost, high leverage, so we fix it first.",
- # 7 Prioritisation
- "So onto what we'd prioritise. Deliberately, this is three high-impact moves rather than a big multi-year transformation. One: secure executive sponsorship and a compliance mandate — fast, cheap, unlocks everything. Two: standardise the procure-to-pay process and rationalise the catalogue and tail spend — this is the biggest near-term efficiency win at 1.8 million transactions a day, and crucially it doesn't require replacing any systems. Three: rebalance the two teams — fill Team 1's vacancies or shift workload — a quick operational win that also helps morale. Our assumption is these three deliver most of the benefit.",
- # 8 Long-term
- "The bigger structural items we'd treat as longer-term and only do if the data justifies them: consolidating the ERPs, rationalising the supplier base, and moving toward a shared-services model. I want to be clear — we are not assuming a full ERP consolidation is the right answer yet. That's a significant business case and it should be decided on spend, cost-to-serve and contractual lock-in data, not assumed up front.",
- # 9 Org factors
- "Why are these a priority organisationally? It helps to look across four lenses. People: the teams are imbalanced, morale is low, and procurement is seen as low value — so capacity and appetite for change are limited. Process: no standard process, manual work, catalogue sprawl — and that scales to 1.8 million transactions. Governance: no executive mandate, which is the thing that elevates all of this to a priority. And systems: three poorly integrated ERPs with no consolidated spend data. It's embedded across all four, which is exactly why it needs addressing now.",
- # 10 Risks
- "On risks and dependencies that could affect how we prioritise. The gating dependency is executive sponsorship — without it the plan stalls, full stop. We'd expect cultural resistance from 59 units used to autonomy. Being multinational, local tax and regulatory rules limit how far we can impose a single standard. Team 1's thin capacity limits how much change they can absorb. ERP consolidation carries real cost and business-continuity risk. And ongoing M&A could keep re-introducing fragmentation, so this needs to be sustainable, not a one-off.",
- # 11 Info needed
- "Before we commit to this prioritisation, there's information we'd want: spend by unit, category and supplier, and how much supplier overlap there is; invoice volumes, cycle times and any late-payment penalties; the cost of running the three ERPs; what share of the 1.8 million daily transactions is low-value tail spend and what one order costs to process; the number of catalogue items and contracts; and the budget, timeline and genuine executive appetite for change.",
- # 12 Questions
- "Which leads to the five questions we'd put to the client. One — spend and suppliers: total spend, how it splits across the 59 units, and the supplier overlap. Two — governance: is there appetite to mandate a single operating model, and who'd sponsor it. Three — transaction mix: how much of the 1.8 million is tail spend and what does an order cost to process. Four — systems: is ERP consolidation on the table, what's locked in, and is the target shared services or continued autonomy. And five — people: what's driving the low morale, are the vacancies funded, and can resource move between the teams. Those answers would let us confirm the plan. Happy to take questions.",
-]
-
-slides = list(prs.slides)
-for slide, note in zip(slides, SCRIPT):
-    slide.notes_slide.notes_text_frame.text = note
-
 prs.save(out)
-print("saved", out, "slides:", len(prs.slides._sldIdLst), "notes:", len(SCRIPT))
+print("saved", out, "slides:", len(prs.slides._sldIdLst))
