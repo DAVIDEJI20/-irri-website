@@ -194,5 +194,38 @@ body(s, [
 ], top=1.4, size=15)
 
 out = "/home/user/-irri-website/NextTech_Procurement_Analysis.pptx"
+
+# ---- Speaker notes (script) ----
+SCRIPT = [
+ # 1 Title
+ "Thanks everyone. Over the next few minutes I'll walk through three things: first the procurement issues we've identified and the impact they're having; second what we'd prioritise and why; and third the questions we'd put back to the client. I'll flag where we've made assumptions, because some of this needs data to confirm.",
+ # 2 Context
+ "The key thing to understand is that this isn't really 59 separate problems — it's one. The company grew by acquisition but never integrated those businesses, so today 59 sites run as independent organisations, each with their own processes, suppliers and back-end systems. Two central teams are accountable across all of them. And the scale matters: at roughly 1.8 million transactions a day, even a tiny inefficiency per transaction becomes enormous. Everything that follows comes from the manager's own internal analysis.",
+ # 3 Root causes
+ "We've separated the findings into root causes — the drivers — and symptoms, because you fix the drivers, not the symptoms. There are four root causes. R1, and the most important, is that there's no executive mandate: the central teams are accountable but can't actually enforce compliance across 59 autonomous units. R2 is the fragmented operating model from M&A. R3 is that there's no standard process — staff are upskilled to invoice in lots of different ways. And R4 is the systems: three ERPs, Oracle, SAP and PeopleSoft, poorly integrated, forcing a lot of manual work.",
+ # 4 Symptoms
+ "Those root causes produce five symptoms. Protracted payables — slow invoice processing. Lost economies of scale. Catalogue proliferation and tail spend, where a single low-value item needs multiple orders to different suppliers. The resourcing imbalance between the two teams — Team 1 is understaffed with two vacancies and part-timers while Team 2 is much stronger. And low morale, because procurement is seen as low-value back-office work. I'd flag that the cost of late payments and the morale-driven attrition are assumptions at this stage — sensible, but not yet quantified.",
+ # 5 Evidence
+ "This is the strongest piece of evidence. Between 2023 and 2024 the supplier count went up 18%, from 224 to 264, and spend rose 16% to just over a billion. But average spend per supplier actually fell. So as the business grows it's adding suppliers faster than it's consolidating them — it's fragmenting, not concentrating. That's direct evidence for the lost economies of scale and the un-integrated operating model. The assumption is that these are group-wide numbers; a per-unit split would let us size the opportunity precisely.",
+ # 6 Most important
+ "If I had to pick the single most important issue, it's R1 — the lack of an executive mandate. It's not the most expensive problem to fix, but it's the dependency that unblocks everything else. You simply can't standardise processes, consolidate systems or rationalise suppliers across 59 autonomous units unless leadership mandates it. And the business impact of not fixing it is exactly what that supplier chart shows — continued fragmentation. Low cost, high leverage, so we fix it first.",
+ # 7 Prioritisation
+ "So onto what we'd prioritise. Deliberately, this is three high-impact moves rather than a big multi-year transformation. One: secure executive sponsorship and a compliance mandate — fast, cheap, unlocks everything. Two: standardise the procure-to-pay process and rationalise the catalogue and tail spend — this is the biggest near-term efficiency win at 1.8 million transactions a day, and crucially it doesn't require replacing any systems. Three: rebalance the two teams — fill Team 1's vacancies or shift workload — a quick operational win that also helps morale. Our assumption is these three deliver most of the benefit.",
+ # 8 Long-term
+ "The bigger structural items we'd treat as longer-term and only do if the data justifies them: consolidating the ERPs, rationalising the supplier base, and moving toward a shared-services model. I want to be clear — we are not assuming a full ERP consolidation is the right answer yet. That's a significant business case and it should be decided on spend, cost-to-serve and contractual lock-in data, not assumed up front.",
+ # 9 Org factors
+ "Why are these a priority organisationally? It helps to look across four lenses. People: the teams are imbalanced, morale is low, and procurement is seen as low value — so capacity and appetite for change are limited. Process: no standard process, manual work, catalogue sprawl — and that scales to 1.8 million transactions. Governance: no executive mandate, which is the thing that elevates all of this to a priority. And systems: three poorly integrated ERPs with no consolidated spend data. It's embedded across all four, which is exactly why it needs addressing now.",
+ # 10 Risks
+ "On risks and dependencies that could affect how we prioritise. The gating dependency is executive sponsorship — without it the plan stalls, full stop. We'd expect cultural resistance from 59 units used to autonomy. Being multinational, local tax and regulatory rules limit how far we can impose a single standard. Team 1's thin capacity limits how much change they can absorb. ERP consolidation carries real cost and business-continuity risk. And ongoing M&A could keep re-introducing fragmentation, so this needs to be sustainable, not a one-off.",
+ # 11 Info needed
+ "Before we commit to this prioritisation, there's information we'd want: spend by unit, category and supplier, and how much supplier overlap there is; invoice volumes, cycle times and any late-payment penalties; the cost of running the three ERPs; what share of the 1.8 million daily transactions is low-value tail spend and what one order costs to process; the number of catalogue items and contracts; and the budget, timeline and genuine executive appetite for change.",
+ # 12 Questions
+ "Which leads to the five questions we'd put to the client. One — spend and suppliers: total spend, how it splits across the 59 units, and the supplier overlap. Two — governance: is there appetite to mandate a single operating model, and who'd sponsor it. Three — transaction mix: how much of the 1.8 million is tail spend and what does an order cost to process. Four — systems: is ERP consolidation on the table, what's locked in, and is the target shared services or continued autonomy. And five — people: what's driving the low morale, are the vacancies funded, and can resource move between the teams. Those answers would let us confirm the plan. Happy to take questions.",
+]
+
+slides = list(prs.slides)
+for slide, note in zip(slides, SCRIPT):
+    slide.notes_slide.notes_text_frame.text = note
+
 prs.save(out)
-print("saved", out, "slides:", len(prs.slides._sldIdLst))
+print("saved", out, "slides:", len(prs.slides._sldIdLst), "notes:", len(SCRIPT))
