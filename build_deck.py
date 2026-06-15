@@ -141,6 +141,19 @@ body(s, [
     (1, "Assumption: this creates attrition risk and change fatigue.", False),
 ], top=1.4, size=15)
 
+# Evidence: supplier trend
+s = add_slide(); title_box(s, "Evidence: supplier base is fragmenting, not consolidating")
+body(s, [
+    (0, "2023:  224 suppliers  |  $900M spend", True),
+    (0, "2024:  264 suppliers  |  $1,045M spend", True),
+    (1, "Suppliers grew +40 (+18%); spend grew +$145M (+16%).", False),
+    (1, "Average spend per supplier FELL: $4.02M (2023) -> $3.96M (2024).", False),
+    (0, "What this tells us:", True),
+    (1, "The company is adding suppliers faster than it consolidates them — so rising spend is NOT translating into better buying leverage.", False),
+    (1, "This is direct evidence for S2 (lost economies of scale) and the fragmented supplier base (R2).", False),
+    (0, "Assumption: these figures are group-wide across the 59 units; a per-unit / per-category split would sharpen the consolidation opportunity.", False),
+], top=1.4, size=16)
+
 # Most important
 s = add_slide(); title_box(s, "Which issue matters most?", "Our view")
 body(s, [
