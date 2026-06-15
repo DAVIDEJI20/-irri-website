@@ -148,16 +148,29 @@ body(s, [
     (0, "Assumption: a full ERP consolidation is NOT assumed to be the right answer yet — it should be a business case decided on spend, cost-to-serve and lock-in data.", False),
 ], top=1.6, size=17)
 
-# ---- 9. Risks / dependencies ----
-s = add_slide(); title_box(s, "Organisational factors, risks & dependencies")
+# ---- 9. Organisational factors that make this a priority ----
+s = add_slide(); title_box(s, "Why this is a priority — organisational factors", "People · Process · Governance · Systems")
 body(s, [
-    (0, "Lack of executive support is itself the #1 dependency — the plan stalls without it.", True),
-    (0, "Cultural resistance from 59 autonomous units to giving up control.", False),
-    (0, "Multinational complexity — local tax / statutory / regulatory rules limit a single standard.", False),
-    (0, "Low morale + thin Team 1 capacity — limited bandwidth to absorb change.", False),
-    (0, "ERP consolidation carries cost, business-continuity and data-migration risk.", False),
-    (0, "Ongoing M&A may keep re-introducing fragmentation; contractual lock-ins on systems/suppliers.", False),
-], top=1.5, size=17)
+    (0, "People", True),
+    (1, "Imbalanced teams (Team 1 understaffed, 2 vacancies, part-timers) + low morale + 'low-value' perception = limited capacity and appetite to deliver change.", False),
+    (0, "Process", True),
+    (1, "No standard P2P, manual processes, catalogue proliferation, multiple orders for low-value items — inefficiency scales to 1.8M txns/day.", False),
+    (0, "Governance", True),
+    (1, "No executive mandate; teams accountable but cannot enforce compliance across 59 units — this is what elevates everything to a priority.", False),
+    (0, "Systems", True),
+    (1, "Three poorly integrated ERPs (Oracle/SAP/PeopleSoft) -> manual rework, no consolidated spend data, high IT/training cost.", False),
+], top=1.4, size=15)
+
+# ---- 10. Risks / constraints / dependencies ----
+s = add_slide(); title_box(s, "Key risks, constraints & dependencies affecting prioritisation")
+body(s, [
+    (0, "Dependency: executive sponsorship is the gating dependency — the plan stalls without it.", True),
+    (0, "Constraint: 59 autonomous units will resist giving up control (cultural).", False),
+    (0, "Constraint: multinational tax / statutory / regulatory rules limit a single standard.", False),
+    (0, "Constraint: thin Team 1 capacity + low morale limit bandwidth to absorb change.", False),
+    (0, "Risk: ERP consolidation carries cost, business-continuity and data-migration risk.", False),
+    (0, "Risk: ongoing M&A may keep re-introducing fragmentation; contractual lock-ins on systems/suppliers.", False),
+], top=1.5, size=16)
 
 # ---- 10. Info needed ----
 s = add_slide(); title_box(s, "Information needed before confirming priorities")
@@ -179,16 +192,6 @@ body(s, [
     (0, "4.  Systems — is ERP consolidation on the table, what lock-ins exist, and is the target shared services or continued unit autonomy?", True),
     (0, "5.  People — what's driving low morale, are Team 1's vacancies funded, and can resource move between the two teams?", True),
 ], top=1.4, size=15)
-
-# ---- 12. Summary ----
-s = add_slide(); title_box(s, "In summary")
-body(s, [
-    (0, "The real problem: one company is run as 59, so spend, suppliers and systems keep fragmenting.", True),
-    (0, "Most important issue: no executive mandate to enforce standardisation (R1) — it blocks everything else.", True),
-    (0, "Recommended now: 1) get exec sponsorship, 2) standardise P2P + tail spend, 3) rebalance the teams.", True),
-    (0, "Later, only if the data supports it: ERP consolidation, supplier rationalisation, shared services.", False),
-    (0, "Next step: get the spend/transaction data and answers to the five questions to confirm the plan.", False),
-], top=1.6, size=17)
 
 out = "/home/user/-irri-website/NextTech_Procurement_Analysis.pptx"
 prs.save(out)
